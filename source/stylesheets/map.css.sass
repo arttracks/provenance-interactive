@@ -1,0 +1,64 @@
+@import vars
+#d3-visualization
+  overflow: hidden
+
+#MapMask
+  fill: #fff
+
+#map
+  position: absolute
+  right: 0
+  top: 0
+  width: $INTERACTIVE_WIDTH - $SIDEBAR_WIDTH
+  height: $INTERACTIVE_HEIGHT 
+  background-color: black
+
+.map 
+  fill: #333
+  stroke: #000
+
+
+#timeline-background
+  overflow: hidden
+#timeline-selectbox
+  stroke: none
+  fill: url("#timelineSelectGradient")
+
+.timebar_owner_name
+  fill: $LIGHT_GREY
+  stroke: none
+  font-size: 17px
+  font-family: "MyriadPro-Cond", sans-serif
+
+.possible_rect
+  fill: rgb(140, 26, 26)
+  opacity: .5
+  stroke-width: 1.5px
+  &.pittsburgh
+    fill: goldenrod
+
+
+.pin 
+  circle 
+    stroke: none
+  line
+    stroke: #AAE
+
+  &.ownerPin circle
+    fill: url("#redPinhead")
+  &.eventPin circle
+    fill: url("#greyPinhead")
+  &.pittsburgh circle
+    fill: url("#cmoaPinhead")
+  &.owner circle
+    fill: url("#creatorPinhead")
+
+.movement_arc, .event_movement_arc
+  fill: none
+  stroke: #900
+.event_movement_arc
+  stroke: #555
+
+#pghStar
+  fill: goldenrod
+  stroke: none

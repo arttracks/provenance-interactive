@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title= current_page.data.title || "CMOA Gallery Interactive"
+
+    /  - ----- STANDARD META TAGS ---------------------------------------------
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    /  - ----- PER-PAGE META --------------------------------------------------
+    = yield_content :meta
+
+    /  - ----- CSS ------------------------------------------------------------
+    = stylesheet_link_tag "normalize", "all"
+  
+  %body{class: page_classes}
+    = yield
+
+    /  - ----- JAVASCRIPTS -------------------------------------------------------
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="http://d3js.org/topojson.v1.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+    = javascript_include_tag  "all"
+    = yield_content :javascript

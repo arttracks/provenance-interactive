@@ -1,0 +1,62 @@
+@import ceaser-easing
+@import vars
+
+#holder
+  height: $INTERACTIVE_HEIGHT
+  width: $INTERACTIVE_WIDTH
+  overflow: hidden
+  position: absolute
+  top: 0
+  left: 0
+  background-color: #000
+#interactive
+  position: absolute
+  z-index: 100
+  left: 0
+  top: 0
+  width: $INTERACTIVE_WIDTH
+  height: $IMAGE-GRID-HEIGHT
+  background-color: #131313
+  background: #131313 image_url("bg-tile-1.png")
+  overflow: hidden
+  padding-top: 30px
+  transition: top $TRANSITION_SPEED  ceaser($easeOutQuint)
+  box-shadow: 0px 10px 40px #000
+
+.grid-image
+  width: 230px
+  height: 250px
+  overflow: hidden
+  margin: 5px 
+  padding: 0
+  background-color: rgba(30,30,30,.75)
+  float: left
+  cursor: pointer
+
+#grid-bottom
+  z-index: 100
+  position: absolute
+  top: 847px
+  width: $INTERACTIVE_WIDTH
+  height: 200px
+  border-top: 3px solid $LIGHT_GREY
+  background: #2f0101 image_url("bg-tile-2.png")
+  transition: top $TRANSITION_SPEED ceaser($easeOutQuint)
+
+  h1
+    font-family: 'klavikabold', sans-serif
+    font-size: 48px
+    text-align: center
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+
+.single-item
+  #interactive
+    top: (0 - $IMAGE-GRID-HEIGHT - 14px)
+  #grid-bottom
+    top: ($INTERACTIVE_HEIGHT - 14px )
+
+#image-preloads
+  position: absolute
+  left: -10000px
+  display: hidden
