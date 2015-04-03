@@ -1,5 +1,6 @@
 @import vars
-
+#d3-visualization
+  overflow: hidden
 #map
   position: absolute
   right: 0
@@ -7,6 +8,12 @@
   width: $INTERACTIVE_WIDTH - $SIDEBAR_WIDTH
   height: $INTERACTIVE_HEIGHT 
   background-color: black
+
+#timeline-background
+  overflow: hidden
+#timeline-selectbox
+  stroke: none
+  fill: url("#timelineSelectGradient")
 
 .pin 
   circle 

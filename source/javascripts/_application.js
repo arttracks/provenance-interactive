@@ -11,11 +11,13 @@ var margin = {top: 40, right: 20, bottom: 40, left: 20},
 
 // ----  CONSTANTS  -----------------------------------------------------------
 
-var MAP_HEIGHT      = 680;
-var GUTTER          = 20;
-var TIMEBOX_HEIGHT  = height - (MAP_HEIGHT+GUTTER);
-var LARGE_DOT       = {radius: 8, type: "ownerPin", xOffset: -.8};
-var SMALL_DOT       = {radius: 6, type: "eventPin", xOffset: -.5};
+var MAP_HEIGHT        = 680;
+var GUTTER            = 20;
+var TIMEBOX_HEIGHT    = height - (MAP_HEIGHT+GUTTER);
+var LARGE_DOT         = {radius: 8, type: "ownerPin", xOffset: -.8};
+var SMALL_DOT         = {radius: 6, type: "eventPin", xOffset: -.5};
+var TIME_RANGE_YEARS  = 10;
+var TIME_RANGE        = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
 
 
 // ----  VARIABLES  -----------------------------------------------------------
@@ -29,6 +31,7 @@ var mapPath;        //  Actual map geometry
 var provenance;     //  The parsed data of provenance
 var events;         //  The parsed data for exhibition history
 var scale;          //  A fudge factor for map zooming
+var selectedDate;   //  The date currently selected in the timeline
 
 
 // ----  HELPER FUNCTIONS  ----------------------------------------------------
@@ -37,6 +40,9 @@ var dateFormat = d3.time.format("%Y-%m-%d");
 var nameKey = function(d) {return d.name;}
 var hasLat  = function(d) {return d.lat}
 var getGeoPair = function(d){return [d.lng,d.lat]};
+var yearOffset = function(d1,d2){
+  return (1-Math.min(1,(Math.abs(d1-d2)/TIME_RANGE)));
+}
 
 
 // ----  INITIALIZE ELEMENTS  -------------------------------------------------
@@ -44,6 +50,27 @@ queue()
   .defer(d3.json, "/data/world-110m2.json")
   .await(allLoaded);
 
+
+// #############################################################################
+// #        INTERACTION FUNCTIONS                                              #
+// #############################################################################
+
+//-----------------------------------------------------------------------------
+function handleMouse(d,i) {
+  var e = d3.event;
+  if (e.buttons != 1){
+    return;
+  }
+  var m = d3.mouse(this);
+  selectedDate = x.invert(m[0]);
+  redraw();
+}
+
+//-----------------------------------------------------------------------------
+function handleMouseUp(d,i) {
+  selectedDate = null;
+  redraw();
+}
 
 // #############################################################################
 // #        DRAWING FUNCTIONS                                                  #
@@ -56,6 +83,11 @@ function redraw() {
     .call(xAxis)
     .selectAll("text")
       .attr("dy","0.5em")
+      .style("opacity", function(d) {
+        if (!selectedDate) return 1;
+        return .25 + .75*yearOffset(selectedDate,d);
+       
+      })
 
   drawOwnerMovementArcs();
   drawExhibitionMovementArcs();
@@ -110,26 +142,45 @@ function drawExhibitionMovementArcs() {
 
 //-----------------------------------------------------------------------------
 function drawTimeline() {
-  var possible_rects = svg.selectAll('.possible').data(provenance);
-  var definite_rects = svg.selectAll('.definite_rect').data(provenance)
+  var possible_rects = svg.select("#timeline-background").selectAll('.possible').data(provenance);
+  var definite_rects = svg.select("#timeline-background").selectAll('.definite_rect').data(provenance)
   var timebarHeight = TIMEBOX_HEIGHT/provenance.length;
 
+  //var futuredate = new Date();
+  var pastdate = new Date();
+  if (selectedDate) {
+    //futuredate.setFullYear(selectedDate.getFullYear()+5, selectedDate.getMonth(), selectedDate.getDay());
+    pastdate.setFullYear(selectedDate.getFullYear()-TIME_RANGE_YEARS, selectedDate.getMonth(), selectedDate.getDay());
+    var selectbox_width =  (x(selectedDate)-x(pastdate))*2
 
-  possible_rects.enter()
-      .append("g")
-        .attr("class", "possible")
-        .append("rect")
-        .attr("class", "possible_rect")
+    svg.select('#timeline-selectbox')
+      .attr("x", x(pastdate))
+      .attr("width", selectbox_width)
+      .style("visibility","visible")
 
-    possible_rects.exit().remove()
+  }
+  else {
+    svg.select('#timeline-selectbox')
+      .style("visibility","hidden")
+  }
 
-    possible_rects
-      .select(".possible_rect")
-      .select(function(d) { return d.beginning && d.ending ? this : null;})
-      .attr("x", function(d){return x(d.beginning);})
-      .attr("width", function(d){return x(d.ending)-x(d.beginning);})
-      .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
-      .attr("height", timebarHeight);
+
+
+  // possible_rects.enter()
+  //     .append("g")
+  //       .attr("class", "possible")
+  //       .append("rect")
+  //       .attr("class", "possible_rect")
+
+  //   possible_rects.exit().remove()
+
+  //   possible_rects
+  //     .select(".possible_rect")
+  //     .select(function(d) { return d.beginning && d.ending ? this : null;})
+  //     .attr("x", function(d){return x(d.beginning);})
+  //     .attr("width", function(d){return x(d.ending)-x(d.beginning);})
+  //     .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
+  //     .attr("height", timebarHeight);
 
 
     definite_rects.enter()
@@ -257,6 +308,7 @@ function allLoaded(error, topology) {
 
 function initializeD3() {
   svg = d3.select("#map").append("svg")
+     .attr("id","#d3-visualization")
      .attr("width", width + margin.left + margin.right)
      .attr("height", height + margin.top + margin.bottom)
    .append("g")
@@ -280,6 +332,12 @@ function drawMapMask() {
       defstr +='  <radialGradient id="creatorPinhead" cx="25%" cy="40%" r="70%" fx="30%" fy="30%">'
       defstr +='    <stop offset="0%" style="stop-color:rgb(60,255,60);stop-opacity:1" />'
       defstr +='    <stop offset="99%" style="stop-color:rgb(20,135,11);stop-opacity:1" />'
+      defstr +='  </radialGradient>'
+      defstr +='  <linearGradient id="timelineSelectGradient" x1="0" x2="1" y1="0" y2="0">'
+      defstr +='    <stop offset="0%" style="stop-color:#333;stop-opacity:0" />'
+      defstr +='    <stop offset="33%" style="stop-color:#fff;stop-opacity:.15" />'
+      defstr +='    <stop offset="66%" style="stop-color:#fff;stop-opacity:.15" />'
+      defstr +='    <stop offset="100%" style="stop-color:#333;stop-opacity:0" />'
       defstr +='  </radialGradient>'
   var defs = d3.select('svg').append('defs').html(defstr)
 
@@ -342,13 +400,22 @@ function drawMap(topology) {
   worldMap.append("svg:polygon")
        .attr("id", "pghStar")
 
-  svg.append("g")
+  var bg = svg.append("svg")
     .attr("id", "timeline-background")
-    .append("rect")
-      .attr("x",0)
-      .attr("y",MAP_HEIGHT+GUTTER)
-      .attr("width",width)
-      .attr("height",TIMEBOX_HEIGHT)
+    .attr("width",width)
+    .on("mousemove",handleMouse)
+    .on("mousedown",handleMouse)
+    .on("mouseup", handleMouseUp)
+  bg.append("rect")
+    .attr("x",0)
+    .attr("y",MAP_HEIGHT+GUTTER)
+    .attr("width",width)
+    .attr("height",TIMEBOX_HEIGHT)
+  bg.append("rect")
+    .attr("id", "timeline-selectbox")
+    .attr("height",TIMEBOX_HEIGHT)
+    .attr("x",0)
+    .attr("y",MAP_HEIGHT+GUTTER)
 }
 
 
@@ -393,7 +460,6 @@ function buildProvenanceObject(data, creation) {
     else {
       obj.beginning = creation;
     }
-    //console.log(obj);
     return obj;
   });
 }
