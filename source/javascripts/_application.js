@@ -61,7 +61,7 @@ var yearOffset = function(date,firstDate,lastDate){
 
 // ----  INITIALIZE ELEMENTS  -------------------------------------------------
 queue()
-  .defer(d3.json, "/data/world-110m2.json")
+  .defer(d3.json, "data/world-110m2.json")
   .await(allLoaded);
 
 
