@@ -1,0 +1,34 @@
+@import vars
+
+#map
+  position: absolute
+  right: 0
+  top: 0
+  width: $INTERACTIVE_WIDTH - $SIDEBAR_WIDTH
+  height: $INTERACTIVE_HEIGHT 
+  background-color: black
+
+.pin 
+  circle 
+    stroke: none
+  line
+    stroke: #AAE
+
+  &.ownerPin circle
+    fill: url("#redPinhead")
+  &.eventPin circle
+    fill: url("#greyPinhead")
+  &.pittsburgh circle
+    fill: url("#cmoaPinhead")
+  &.owner circle
+    fill: url("#creatorPinhead")
+
+.movement_arc, .event_movement_arc
+  fill: none
+  stroke: #900
+.event_movement_arc
+  stroke: #555
+
+#pghStar
+  fill: goldenrod
+  stroke: none

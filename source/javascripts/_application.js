@@ -1,0 +1,475 @@
+//= require "_moment"
+//= require "_julian"
+//= require "_lodash.min"
+
+
+// ----  D3 DIMENSIONS  -------------------------------------------------------
+
+var margin = {top: 40, right: 20, bottom: 40, left: 20},
+    width = $("#map").width() - margin.left - margin.right,
+    height = $("#map").height() - margin.top - margin.bottom;
+
+// ----  CONSTANTS  -----------------------------------------------------------
+
+var MAP_HEIGHT      = 680;
+var GUTTER          = 20;
+var TIMEBOX_HEIGHT  = height - (MAP_HEIGHT+GUTTER);
+var LARGE_DOT       = {radius: 8, type: "ownerPin", xOffset: -.8};
+var SMALL_DOT       = {radius: 6, type: "eventPin", xOffset: -.5};
+
+
+// ----  VARIABLES  -----------------------------------------------------------
+
+var svg;            //  Main SVG element
+var worldMap;       //  Holder for the map elements
+var x;              //  Scale for the x axis
+var xAxis;          //  Axis for x
+var projection;     //  projection for the map
+var mapPath;        //  Actual map geometry
+var provenance;     //  The parsed data of provenance
+var events;         //  The parsed data for exhibition history
+var scale;          //  A fudge factor for map zooming
+
+
+// ----  HELPER FUNCTIONS  ----------------------------------------------------
+
+var dateFormat = d3.time.format("%Y-%m-%d");
+var nameKey = function(d) {return d.name;}
+var hasLat  = function(d) {return d.lat}
+var getGeoPair = function(d){return [d.lng,d.lat]};
+
+
+// ----  INITIALIZE ELEMENTS  -------------------------------------------------
+queue()
+  .defer(d3.json, "/data/world-110m2.json")
+  .await(allLoaded);
+
+
+// #############################################################################
+// #        DRAWING FUNCTIONS                                                  #
+// #############################################################################
+
+//-----------------------------------------------------------------------------
+function redraw() {
+
+  svg.selectAll("g.x.axis")
+    .call(xAxis)
+    .selectAll("text")
+      .attr("dy","0.5em")
+
+  drawOwnerMovementArcs();
+  drawExhibitionMovementArcs();
+  
+  drawOwnerPins();
+  drawExhibitionPins();
+
+  drawTimeline();
+}
+
+
+//-----------------------------------------------------------------------------
+function drawOwnerPins() {
+
+  var ownerData = provenance.filter(hasLat);
+  var ownerPins = worldMap.selectAll("." + LARGE_DOT.type).data(ownerData,nameKey)
+    .call(drawPin, scale, LARGE_DOT)
+    .classed("pittsburgh", function(d){return d.location_name.includes("Pittsburgh")})
+    .classed("creator", function(d,i){return i == 0});
+}
+
+//-----------------------------------------------------------------------------
+function drawOwnerMovementArcs() {
+  var movementPairs = d3.pairs( provenance.filter(hasLat).map(getGeoPair))
+
+  var ownerArcs = worldMap.selectAll(".movement_arc").data(movementPairs)
+    .call(drawMovementArc,scale,"movement_arc");
+}
+
+//-----------------------------------------------------------------------------
+function drawExhibitionPins() {
+  var eventPins = worldMap.selectAll("." + SMALL_DOT.type).data(events)
+    .call(drawPin,scale, SMALL_DOT)
+}
+
+//-----------------------------------------------------------------------------
+function drawExhibitionMovementArcs() {
+  // Build movement data
+  var eventMovements = events.map(function(d) {
+    return [d.src,[d.lng,d.lat]];
+  });
+  var eventReturns = events.map(function(d) {
+    if (d.dest){
+      return [d.dest,[d.lng,d.lat]];   
+    }
+  }).filter(function(d){return (d != undefined)});
+  eventMovements = eventMovements.concat(eventReturns);
+
+  var eventArcs = worldMap.selectAll(".event_movement_arc").data(eventMovements)
+    .call(drawMovementArc,scale, "event_movement_arc");  
+}
+
+//-----------------------------------------------------------------------------
+function drawTimeline() {
+  var possible_rects = svg.selectAll('.possible').data(provenance);
+  var definite_rects = svg.selectAll('.definite_rect').data(provenance)
+  var timebarHeight = TIMEBOX_HEIGHT/provenance.length;
+
+
+  possible_rects.enter()
+      .append("g")
+        .attr("class", "possible")
+        .append("rect")
+        .attr("class", "possible_rect")
+
+    possible_rects.exit().remove()
+
+    possible_rects
+      .select(".possible_rect")
+      .select(function(d) { return d.beginning && d.ending ? this : null;})
+      .attr("x", function(d){return x(d.beginning);})
+      .attr("width", function(d){return x(d.ending)-x(d.beginning);})
+      .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
+      .attr("height", timebarHeight);
+
+
+    definite_rects.enter()
+      .append("rect")
+      .attr("class", "definite_rect")
+
+    definite_rects.exit().remove()
+
+    definite_rects
+      .attr("x", function(d){return x(d.def_begin);})
+      .attr("width", function(d){return x(d.def_end)-x(d.def_begin);})
+      .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
+      .attr("height", timebarHeight);
+}
+
+
+
+// #############################################################################
+// #        GRAPHICAL ELEMENT FUNCTIONS                                        #
+// #############################################################################
+
+
+//-----------------------------------------------------------------------------
+function drawMovementArc(selection, scale, arcClass) {
+  var arc = selection.enter()
+    .append("g")
+    .attr("class", arcClass)
+    .append("path")
+
+  selection.exit().remove()
+
+  selection.select("path")
+    .attr("stroke-width", 1.5 / scale + "px")
+    .attr('d',function(d){
+      var p1 = projection(d[0])
+      var p2 = projection(d[1])
+      var x1 = p1[0]
+      var y1 = p1[1]
+      var x2 = p2[0]
+      var y2 = p2[1]
+      var dist2 = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
+      var dist = Math.sqrt(dist2);
+      var centerX = (x1+x2)/2;
+      var centerY = (y1+y2)/2 - (dist*0.1);
+      var str = ["M",x1,y1,"Q",centerX,centerY,x2,y2].join(" ")
+      return str
+    })
+  return selection;
+}
+
+//-----------------------------------------------------------------------------
+function drawPin(selection, scale, type) {
+
+  var r = type.radius / scale;
+  var pinLength = -(r*3)
+
+  var pinClasses = {'pin':true};
+  pinClasses[type.type] = true;
+
+  var pin = selection.enter()
+    .append("g")
+    .classed(pinClasses)
+  
+  pin.append("line")
+  pin.append("circle")
+
+  selection.exit().remove();
+
+  selection.select("circle")
+    .attr("r",r)
+    .attr("cx",function(d){return projection([d.lng,d.lat])[0]+type.xOffset})
+    .attr("cy",function(d){return projection([d.lng,d.lat])[1]+pinLength})
+
+  // draw pin base
+  selection.select("line")
+    .attr("x1",function(d){return projection([d.lng,d.lat])[0]})
+    .attr("x2",function(d){return projection([d.lng,d.lat])[0]+type.xOffset})
+    .attr("y1",function(d){return projection([d.lng,d.lat])[1]})
+    .attr("y2",function(d){return projection([d.lng,d.lat])[1]+pinLength})
+    .style("stroke-width", 1 / scale + "px")
+
+  return selection
+}
+
+
+//-----------------------------------------------------------------------------
+function drawStar(centerX, centerY, arms, outerRadius, innerRadius){
+  var results = "";
+  var angle = Math.PI / arms;
+ 
+  for (var i = 0; i < 2 * arms; i++) {
+      // Use outer or inner radius depending on what iteration we are in.
+      var r = (i & 1) == 0 ? outerRadius : innerRadius;
+      
+      var currX = (+(centerX) + Math.cos(i * angle) * r).toPrecision(4);
+      var currY = (+(centerY) + Math.sin(i * angle) * r).toPrecision(4);
+ 
+      // Our first time we simply append the coordinates, subsequet times
+      // we append a ", " to distinguish each coordinate pair.
+      if (i == 0) {
+         results = currX + "," + currY;
+      }
+      else {
+         results += ", " + currX + "," + currY;
+      }
+   }
+   return results;
+}
+
+// #############################################################################
+// #        INITIALIZATION FUNCTIONS                                           #
+// #############################################################################
+
+//-----------------------------------------------------------------------------
+function allLoaded(error, topology) {
+    initializeD3();
+    drawMapMask();
+    setupProjection();
+    drawMap(topology);
+    setupAxis();
+}  
+
+
+//-----------------------------------------------------------------------------
+
+function initializeD3() {
+  svg = d3.select("#map").append("svg")
+     .attr("width", width + margin.left + margin.right)
+     .attr("height", height + margin.top + margin.bottom)
+   .append("g")
+     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+}
+
+//-----------------------------------------------------------------------------
+function drawMapMask() {
+    var defstr  ='  <radialGradient id="redPinhead" cx="25%" cy="40%" r="70%" fx="30%" fy="30%">'
+      defstr +='    <stop offset="0%" style="stop-color:rgb(255,100,100);stop-opacity:1" />'
+      defstr +='    <stop offset="99%" style="stop-color:rgb(100,0,0);stop-opacity:1" />'
+      defstr +='  </radialGradient>'
+      defstr +='  <radialGradient id="greyPinhead" cx="25%" cy="40%" r="70%" fx="30%" fy="30%">'
+      defstr +='    <stop offset="0%" style="stop-color:rgb(200,200,200);stop-opacity:1" />'
+      defstr +='    <stop offset="99%" style="stop-color:rgb(60,60,60);stop-opacity:1" />'
+      defstr +='  </radialGradient>'
+      defstr +='  <radialGradient id="cmoaPinhead" cx="25%" cy="40%" r="70%" fx="30%" fy="30%">'
+      defstr +='    <stop offset="0%" style="stop-color:rgb(255,255,60);stop-opacity:1" />'
+      defstr +='    <stop offset="99%" style="stop-color:rgb(185,135,11);stop-opacity:1" />'
+      defstr +='  </radialGradient>'
+      defstr +='  <radialGradient id="creatorPinhead" cx="25%" cy="40%" r="70%" fx="30%" fy="30%">'
+      defstr +='    <stop offset="0%" style="stop-color:rgb(60,255,60);stop-opacity:1" />'
+      defstr +='    <stop offset="99%" style="stop-color:rgb(20,135,11);stop-opacity:1" />'
+      defstr +='  </radialGradient>'
+  var defs = d3.select('svg').append('defs').html(defstr)
+
+  defs.append("mask")
+    .attr("id","MapMask")
+      .append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", width)
+      .attr("height",MAP_HEIGHT)
+}
+
+
+//-----------------------------------------------------------------------------
+function setupProjection() {
+  projection = d3.geo.fahey()
+      .scale(300)
+      .translate([width*.45, height*.4]);
+
+  mapPath = d3.geo.path()
+      .projection(projection);  
+}
+
+
+//-----------------------------------------------------------------------------
+function setupAxis() {
+
+  // create the x scale
+  x = d3.time.scale.utc()
+    .range([0, width]);
+
+  // create the x axis
+  xAxis = d3.svg.axis()
+    .scale(x)
+    .ticks(9)
+    .orient("bottom");
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .append("rect")
+        .attr("class","blocker")
+        .attr("x",0)
+        .attr("y",0)
+        .attr("width",width)
+        .attr("height", "20")
+}
+
+//-----------------------------------------------------------------------------
+function drawMap(topology) {
+  worldMap = svg.append("g")
+   .attr("style", "mask: url(#MapMask)")
+     .append("g")
+       .attr("class", "map")
+  
+  worldMap.append("path")
+     .datum(topojson.feature(topology, topology.objects.countries))
+     .attr("d", mapPath);
+
+  worldMap.append("svg:polygon")
+       .attr("id", "pghStar")
+
+  svg.append("g")
+    .attr("id", "timeline-background")
+    .append("rect")
+      .attr("x",0)
+      .attr("y",MAP_HEIGHT+GUTTER)
+      .attr("width",width)
+      .attr("height",TIMEBOX_HEIGHT)
+}
+
+
+
+// #############################################################################
+// #        DATA FUNCTIONS                                                     #
+// #############################################################################
+
+//-----------------------------------------------------------------------------
+function loadWorkOntoMap(n) {
+  var data       = getWork(n);  // External call
+  var creation   = dateFormat.parse(data.creation_date);
+  
+  provenance = buildProvenanceObject(data, creation);
+  events     = buildEvents(data);
+  scale      = zoomMap(provenance,events);
+
+  x.domain([creation,moment()]);
+  redraw();
+}
+
+//-----------------------------------------------------------------------------
+function buildProvenanceObject(data, creation) {
+  return data.owners.map(function(el){
+    var obj =  {
+      ending: dateFormat.parse(el.latest_possible),
+      name: el.name
+    };
+
+    if (el.location) {
+      obj.location_name = el.location.name;
+      obj.lat = el.location.lat;
+      obj.lng = el.location.lng;
+    }
+
+    if (el.earliest_definite) { obj.def_begin = dateFormat.parse(el.earliest_definite); }
+    if (el.latest_definite)   { obj.def_end   = dateFormat.parse(el.latest_definite);   }
+
+    if(el.earliest_possible) {
+      obj.beginning = moment.max(moment(dateFormat.parse(el.earliest_possible)),moment(creation));
+    }
+    else {
+      obj.beginning = creation;
+    }
+    //console.log(obj);
+    return obj;
+  });
+}
+
+
+//-----------------------------------------------------------------------------
+function buildEvents(data) {
+  var obj = [];
+  var src, dest;
+
+  var home;
+
+  data.events.forEach(function(el){
+    if (el.venues) {
+      var date_of_show = dateFormat.parse(el.venues[0].earliest)
+      var home = {lng: -79.99589, lat: 40.44062};
+      for (var q1 = 0; q1 < data["owners"].length; q1++) {
+        var currentOwner = data["owners"][q1];
+        if (!currentOwner.location || !currentOwner.earliest_definite || !currentOwner.latest_definite) continue;
+        var owner_got_it_on = dateFormat.parse(currentOwner.earliest_definite);
+        var owner_lost_it_on = dateFormat.parse(currentOwner.latest_definite);
+        if (owner_got_it_on < date_of_show && owner_lost_it_on > date_of_show) {
+          home = currentOwner.location;
+          break;
+        } 
+      }
+
+      var dest = [home.lng,home.lat];
+      var src = dest;
+
+      for (var q1 = 0; q1 < el.venues.length; q1++) {
+        var venue = el.venues[q1]
+        if (venue.location) {
+          var lat = +venue.location.lat;
+          var lng = +venue.location.lng;
+          var loc = {
+            src: src,
+            lat: lat,
+            lng: lng,
+          }
+          src = [lng,lat];
+          if (q1 == el.venues.length-1) {
+            loc.dest = dest;
+          }
+          obj.push(loc);
+        }
+      };
+    }
+  });
+  return obj;
+}
+
+//-----------------------------------------------------------------------------
+function zoomMap(provenance, events) {
+  var xmin,xmax,ymin,ymax;
+  var all_events = provenance.concat(events);
+  xmin = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lng) : p;},100000);
+  xmax = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lng) : p;},-100000);
+  ymin = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lat) : p;},100000);
+  ymax = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lat) : p;},-100000);
+
+  var bounds= [projection([xmin,ymin]),projection([xmax,ymax])];
+
+  var dx = bounds[1][0] - bounds[0][0],
+      dy = bounds[1][1] - bounds[0][1],
+      x = (bounds[0][0] + bounds[1][0]) / 2,
+      y = (bounds[0][1] + bounds[1][1]) / 2,
+      scale = .9 / Math.max(dx / width, dy / MAP_HEIGHT),
+      translate = [width / 2 - scale * x, MAP_HEIGHT / 2 - scale * y];
+
+  worldMap
+    .style("stroke-width", 1.5 / scale + "px")
+    .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+
+  var pgh = projection([-79.99589,40.44062]);  
+  d3.select("#pghStar").attr("points", drawStar(pgh[0],pgh[1], 5, 10/scale, 5/scale))
+
+  return scale;
+}
