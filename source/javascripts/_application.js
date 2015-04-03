@@ -16,7 +16,7 @@ var GUTTER            = 20;
 var TIMEBOX_HEIGHT    = height - (MAP_HEIGHT+GUTTER);
 var LARGE_DOT         = {radius: 8, type: "ownerPin", xOffset: -.8};
 var SMALL_DOT         = {radius: 6, type: "eventPin", xOffset: -.5};
-var TIME_RANGE_YEARS  = 10;
+var TIME_RANGE_YEARS  = 4;
 var TIME_RANGE        = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
 
 
@@ -37,11 +37,22 @@ var selectedDate;   //  The date currently selected in the timeline
 // ----  HELPER FUNCTIONS  ----------------------------------------------------
 
 var dateFormat = d3.time.format("%Y-%m-%d");
+var getDate = function(d) {return dateFormat.parse(d.replace("?",""))}
 var nameKey = function(d) {return d.name;}
 var hasLat  = function(d) {return d.lat}
 var getGeoPair = function(d){return [d.lng,d.lat]};
-var yearOffset = function(d1,d2){
-  return (1-Math.min(1,(Math.abs(d1-d2)/TIME_RANGE)));
+var yearOffset = function(date,firstDate,lastDate){
+  if (!lastDate){lastDate = firstDate;}
+
+  // if between, 1.
+  if (date >= firstDate && date <= lastDate) {return 1;}
+
+  if (date < firstDate) {
+    return (1-Math.min(1,(Math.abs(date-firstDate)/TIME_RANGE)));
+  }
+  else {
+    return (1-Math.min(1,(Math.abs(date-lastDate)/TIME_RANGE)));
+  }
 }
 
 
@@ -69,7 +80,9 @@ function handleMouse(d,i) {
 //-----------------------------------------------------------------------------
 function handleMouseUp(d,i) {
   selectedDate = null;
-  redraw();
+  if ($(".singleItem") && provenance){
+    redraw();
+  }
 }
 
 // #############################################################################
@@ -92,8 +105,8 @@ function redraw() {
   drawOwnerMovementArcs();
   drawExhibitionMovementArcs();
   
-  drawOwnerPins();
   drawExhibitionPins();
+  drawOwnerPins();
 
   drawTimeline();
 }
@@ -112,6 +125,13 @@ function drawOwnerPins() {
 //-----------------------------------------------------------------------------
 function drawOwnerMovementArcs() {
   var movementPairs = d3.pairs( provenance.filter(hasLat).map(getGeoPair))
+  movementPairs = movementPairs.map(function(d,i) {
+    return {
+      points: d,
+      date: provenance[i].beginning,
+      lastDate: provenance[i].ending
+    };
+  })
 
   var ownerArcs = worldMap.selectAll(".movement_arc").data(movementPairs)
     .call(drawMovementArc,scale,"movement_arc");
@@ -125,75 +145,112 @@ function drawExhibitionPins() {
 
 //-----------------------------------------------------------------------------
 function drawExhibitionMovementArcs() {
-  // Build movement data
   var eventMovements = events.map(function(d) {
-    return [d.src,[d.lng,d.lat]];
+    return {
+      points: [d.src,[d.lng,d.lat]], 
+      date:   d.date,
+      lastDate: d.lastDate
+    };
   });
   var eventReturns = events.map(function(d) {
     if (d.dest){
-      return [d.dest,[d.lng,d.lat]];   
+      return {
+        points: [d.dest,[d.lng,d.lat]],
+        date:   d.date
+      };   
     }
   }).filter(function(d){return (d != undefined)});
   eventMovements = eventMovements.concat(eventReturns);
 
   var eventArcs = worldMap.selectAll(".event_movement_arc").data(eventMovements)
-    .call(drawMovementArc,scale, "event_movement_arc");  
+    .call(drawMovementArc,scale, "event_movement_arc") 
 }
 
 //-----------------------------------------------------------------------------
 function drawTimeline() {
-  var possible_rects = svg.select("#timeline-background").selectAll('.possible').data(provenance);
-  var definite_rects = svg.select("#timeline-background").selectAll('.definite_rect').data(provenance)
-  var timebarHeight = TIMEBOX_HEIGHT/provenance.length;
 
-  //var futuredate = new Date();
-  var pastdate = new Date();
+  var pastdate, futuredate;
+
+  // Draw selected time highlight
   if (selectedDate) {
-    //futuredate.setFullYear(selectedDate.getFullYear()+5, selectedDate.getMonth(), selectedDate.getDay());
+    pastdate = new Date();
+    futuredate = new Date();
+    futuredate.setFullYear(selectedDate.getFullYear()+5, selectedDate.getMonth(), selectedDate.getDay());
     pastdate.setFullYear(selectedDate.getFullYear()-TIME_RANGE_YEARS, selectedDate.getMonth(), selectedDate.getDay());
+    
     var selectbox_width =  (x(selectedDate)-x(pastdate))*2
 
     svg.select('#timeline-selectbox')
       .attr("x", x(pastdate))
       .attr("width", selectbox_width)
-      .style("visibility","visible")
-
+      .style("opacity",1)
   }
   else {
     svg.select('#timeline-selectbox')
-      .style("visibility","hidden")
+      .transition()
+        .style("opacity",0)
   }
 
 
 
-  // possible_rects.enter()
-  //     .append("g")
-  //       .attr("class", "possible")
-  //       .append("rect")
-  //       .attr("class", "possible_rect")
-
-  //   possible_rects.exit().remove()
-
-  //   possible_rects
-  //     .select(".possible_rect")
-  //     .select(function(d) { return d.beginning && d.ending ? this : null;})
-  //     .attr("x", function(d){return x(d.beginning);})
-  //     .attr("width", function(d){return x(d.ending)-x(d.beginning);})
-  //     .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
-  //     .attr("height", timebarHeight);
+  var timelineBars = svg.select("#timeline-background").selectAll('.timelineBar').data(provenance);
+  var definite_rects = svg.select("#timeline-background").selectAll('.definite_rect').data(provenance)
+  var timebarHeight = Math.min(TIMEBOX_HEIGHT/provenance.length,30);
 
 
-    definite_rects.enter()
-      .append("rect")
-      .attr("class", "definite_rect")
+  var rectEnter = timelineBars.enter()
+    .append("g")
+      .attr("class", "timelineBar")
+  rectEnter.append("rect")
+    .attr("class", "possible_rect");
+  rectEnter.append("text")
+    .attr("class", "timebar_owner_name");
 
-    definite_rects.exit().remove()
 
-    definite_rects
-      .attr("x", function(d){return x(d.def_begin);})
-      .attr("width", function(d){return x(d.def_end)-x(d.def_begin);})
-      .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
-      .attr("height", timebarHeight);
+  timelineBars.exit().remove()
+
+  timelineBars
+    .attr("transform", function(d,i){
+      var str = "translate(";
+      str += (d.beginning ? x(d.beginning) : -1000);
+      str += ",";
+      str += (height-(timebarHeight*(i+1)));
+      str += ")";
+      return str;
+    })
+
+
+  timelineBars.select(".timebar_owner_name")
+    .text(function(d){return d.name;})
+    .attr("dy",timebarHeight*.75)
+    .attr("dx", 2);
+
+  timelineBars.select(".possible_rect")
+    .attr("width", function(d){
+      if (d.beginning && d.ending){
+        return Math.max(Math.abs(x(d.ending)-x(d.beginning)),2);
+      }
+      else {
+        return 0;
+      }
+    })
+    .attr("height", timebarHeight)
+    .classed("pittsburgh", function(d){return d.location_name && d.location_name.includes("Pittsburgh")})
+
+
+
+    // definite_rects.enter()
+    //   .append("rect")
+    //   .attr("class", "definite_rect")
+
+    // definite_rects.exit().remove()
+
+    // definite_rects
+    //   // .select(function(d) { return d.def_begin && d.def_end ? this : null;})
+    //   .attr("x", function(d){return x(d.def_begin);})
+    //   .attr("width", function(d){return  Math.abs(x(d.def_end)-x(d.def_begin));})
+    //   .attr("y", function(d,i){return height-(timebarHeight*(i+1))})
+    //   .attr("height", timebarHeight);
 }
 
 
@@ -215,8 +272,8 @@ function drawMovementArc(selection, scale, arcClass) {
   selection.select("path")
     .attr("stroke-width", 1.5 / scale + "px")
     .attr('d',function(d){
-      var p1 = projection(d[0])
-      var p2 = projection(d[1])
+      var p1 = projection(d.points[0])
+      var p2 = projection(d.points[1])
       var x1 = p1[0]
       var y1 = p1[1]
       var x2 = p2[0]
@@ -228,6 +285,10 @@ function drawMovementArc(selection, scale, arcClass) {
       var str = ["M",x1,y1,"Q",centerX,centerY,x2,y2].join(" ")
       return str
     })
+    .style("opacity",function(d){
+      if (!selectedDate) return .5;
+      return yearOffset(selectedDate,d.date,d.lastDate);    
+    }); 
   return selection;
 }
 
@@ -248,6 +309,11 @@ function drawPin(selection, scale, type) {
   pin.append("circle")
 
   selection.exit().remove();
+
+  selection.style("opacity",function(d){
+      if (!selectedDate) return 1;
+      return .1 + .9*yearOffset(selectedDate,d.date, d.lastDate);    
+    });
 
   selection.select("circle")
     .attr("r",r)
@@ -400,12 +466,12 @@ function drawMap(topology) {
   worldMap.append("svg:polygon")
        .attr("id", "pghStar")
 
+
   var bg = svg.append("svg")
     .attr("id", "timeline-background")
     .attr("width",width)
     .on("mousemove",handleMouse)
     .on("mousedown",handleMouse)
-    .on("mouseup", handleMouseUp)
   bg.append("rect")
     .attr("x",0)
     .attr("y",MAP_HEIGHT+GUTTER)
@@ -416,6 +482,8 @@ function drawMap(topology) {
     .attr("height",TIMEBOX_HEIGHT)
     .attr("x",0)
     .attr("y",MAP_HEIGHT+GUTTER)
+
+  d3.select("body").on("mouseup", handleMouseUp)
 }
 
 
@@ -427,7 +495,7 @@ function drawMap(topology) {
 //-----------------------------------------------------------------------------
 function loadWorkOntoMap(n) {
   var data       = getWork(n);  // External call
-  var creation   = dateFormat.parse(data.creation_date);
+  var creation   = getDate(data.creation_date);
   
   provenance = buildProvenanceObject(data, creation);
   events     = buildEvents(data);
@@ -441,7 +509,7 @@ function loadWorkOntoMap(n) {
 function buildProvenanceObject(data, creation) {
   return data.owners.map(function(el){
     var obj =  {
-      ending: dateFormat.parse(el.latest_possible),
+      ending: getDate(el.latest_possible),
       name: el.name
     };
 
@@ -451,15 +519,20 @@ function buildProvenanceObject(data, creation) {
       obj.lng = el.location.lng;
     }
 
-    if (el.earliest_definite) { obj.def_begin = dateFormat.parse(el.earliest_definite); }
-    if (el.latest_definite)   { obj.def_end   = dateFormat.parse(el.latest_definite);   }
+    if (el.earliest_definite) { obj.def_begin = getDate(el.earliest_definite); }
+    if (el.latest_definite)   { obj.def_end   = getDate(el.latest_definite);   }
 
     if(el.earliest_possible) {
-      obj.beginning = moment.max(moment(dateFormat.parse(el.earliest_possible)),moment(creation));
+      obj.beginning = moment.max(moment(getDate(el.earliest_possible)),moment(creation));
     }
     else {
       obj.beginning = creation;
     }
+
+    obj.date = obj.beginning;
+    obj.lastDate = obj.ending;
+
+    obj.debug = el;
     return obj;
   });
 }
@@ -473,14 +546,14 @@ function buildEvents(data) {
   var home;
 
   data.events.forEach(function(el){
-    if (el.venues) {
-      var date_of_show = dateFormat.parse(el.venues[0].earliest)
+    if (el.venues && el.venues[0].earliest) {
+      var date_of_show = getDate(el.venues[0].earliest)
       var home = {lng: -79.99589, lat: 40.44062};
       for (var q1 = 0; q1 < data["owners"].length; q1++) {
         var currentOwner = data["owners"][q1];
         if (!currentOwner.location || !currentOwner.earliest_definite || !currentOwner.latest_definite) continue;
-        var owner_got_it_on = dateFormat.parse(currentOwner.earliest_definite);
-        var owner_lost_it_on = dateFormat.parse(currentOwner.latest_definite);
+        var owner_got_it_on = getDate(currentOwner.earliest_definite);
+        var owner_lost_it_on = getDate(currentOwner.latest_definite);
         if (owner_got_it_on < date_of_show && owner_lost_it_on > date_of_show) {
           home = currentOwner.location;
           break;
@@ -492,13 +565,15 @@ function buildEvents(data) {
 
       for (var q1 = 0; q1 < el.venues.length; q1++) {
         var venue = el.venues[q1]
-        if (venue.location) {
+        if (venue.location && venue.earliest && venue.latest) {
           var lat = +venue.location.lat;
           var lng = +venue.location.lng;
           var loc = {
             src: src,
             lat: lat,
             lng: lng,
+            date: getDate(venue.earliest),
+            lastDate: getDate(venue.latest)
           }
           src = [lng,lat];
           if (q1 == el.venues.length-1) {
