@@ -18,3 +18,5 @@
 .DS_Store
 
 tmp
+.divshot-cache
+divshot.json

@@ -5,6 +5,13 @@
 #MapMask
   fill: #fff
 
+#instruction-text
+  stroke: none
+  fill: $LIGHT_GREY
+  font-family: 'klavikabold', sans-serif
+  font-size: 24px
+
+
 #map
   position: absolute
   right: 0
@@ -20,9 +27,14 @@
 
 #timeline-background
   overflow: hidden
+  fill: darken($DARK_GREY,5)
 #timeline-selectbox
   stroke: none
-  fill: url("#timelineSelectGradient")
+  fill: rgba(255,255,255,.1)//url("#timelineSelectGradient")
+
+.exhibit-marker
+  fill: transparentize($LIGHT_GREY,0)
+  stroke: none
 
 .timebar_owner_name
   fill: $LIGHT_GREY
@@ -30,13 +42,14 @@
   font-size: 17px
   font-family: "MyriadPro-Cond", sans-serif
 
-.possible_rect
+.possible_rect, .definite_rect
   fill: rgb(140, 26, 26)
   opacity: .5
-  stroke-width: 1.5px
+  stroke: none
   &.pittsburgh
     fill: goldenrod
-
+.definite_rect
+  opacity: 1
 
 .pin 
   circle 

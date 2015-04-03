@@ -5,20 +5,23 @@
 
 // ----  D3 DIMENSIONS  -------------------------------------------------------
 
-var margin = {top: 40, right: 20, bottom: 40, left: 20},
+var margin = {top: 40, right: 20, bottom: 60, left: 20},
     width = $("#map").width() - margin.left - margin.right,
     height = $("#map").height() - margin.top - margin.bottom;
 
 // ----  CONSTANTS  -----------------------------------------------------------
 
-var MAP_HEIGHT        = 680;
-var GUTTER            = 20;
-var TIMEBOX_HEIGHT    = height - (MAP_HEIGHT+GUTTER);
-var LARGE_DOT         = {radius: 8, type: "ownerPin", xOffset: -.8};
-var SMALL_DOT         = {radius: 6, type: "eventPin", xOffset: -.5};
-var TIME_RANGE_YEARS  = 4;
-var TIME_RANGE        = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
+var MAP_HEIGHT            = 640;
+var GUTTER                = 60;
+var TIMEBOX_HEIGHT        = height - (MAP_HEIGHT+GUTTER);
+var LARGE_DOT             = {radius: 8, type: "ownerPin", xOffset: -.8};
+var SMALL_DOT             = {radius: 5, type: "eventPin", xOffset: -.5};
+var TIME_RANGE_YEARS      = 4;
+var TIME_RANGE            = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
+var DEFINITE_PERCENT      = .15;
+var EXHIBIT_MARKER_HEIGHT = 10;
 
+var INSTRUCTIONS          = "Touch the timeline below to focus on a particular period."
 
 // ----  VARIABLES  -----------------------------------------------------------
 
@@ -102,13 +105,14 @@ function redraw() {
        
       })
 
-  drawOwnerMovementArcs();
   drawExhibitionMovementArcs();
+  drawOwnerMovementArcs();
   
-  drawExhibitionPins();
   drawOwnerPins();
+  drawExhibitionPins();
 
   drawTimeline();
+  drawExhibitionMarkers();
 }
 
 
@@ -166,6 +170,26 @@ function drawExhibitionMovementArcs() {
     .call(drawMovementArc,scale, "event_movement_arc") 
 }
 
+function drawExhibitionMarkers() {
+  var exhibitMarkers = svg.select("#exhibition-markers").selectAll('.exhibit-marker').data(events);
+
+  var rectEnter = exhibitMarkers.enter()
+  rectEnter.append("rect")
+    .attr("class", "exhibit-marker");
+
+  exhibitMarkers.exit().remove()
+
+  exhibitMarkers
+    .attr("width", 2)
+    .attr("height", TIMEBOX_HEIGHT)
+    .attr("y", MAP_HEIGHT + GUTTER)
+    .attr("x", function(d){return x(d.date, d.lastDate)})
+    .style("opacity",function(d){
+      if (!selectedDate) return .075;
+      return .075 + .75*yearOffset(selectedDate,d.date,d.lastDate);    
+    }); 
+}
+
 //-----------------------------------------------------------------------------
 function drawTimeline() {
 
@@ -203,6 +227,8 @@ function drawTimeline() {
       .attr("class", "timelineBar")
   rectEnter.append("rect")
     .attr("class", "possible_rect");
+  rectEnter.append("rect")
+    .attr("class", "definite_rect");
   rectEnter.append("text")
     .attr("class", "timebar_owner_name");
 
@@ -234,7 +260,22 @@ function drawTimeline() {
         return 0;
       }
     })
-    .attr("height", timebarHeight)
+    .attr("height", timebarHeight-1.5)
+    .classed("pittsburgh", function(d){return d.location_name && d.location_name.includes("Pittsburgh")})
+
+
+
+    timelineBars.select(".definite_rect")
+    .attr("width", function(d){
+      if (d.def_begin && d.def_end){
+        return Math.max(Math.abs(x(d.def_end)-x(d.def_begin)),2);
+      }
+      else {
+        return 0;
+      }
+    })
+    .attr("y",timebarHeight*(1-DEFINITE_PERCENT))
+    .attr("height", timebarHeight*(DEFINITE_PERCENT)-1.5)
     .classed("pittsburgh", function(d){return d.location_name && d.location_name.includes("Pittsburgh")})
 
 
@@ -467,11 +508,15 @@ function drawMap(topology) {
        .attr("id", "pghStar")
 
 
+
+
   var bg = svg.append("svg")
     .attr("id", "timeline-background")
     .attr("width",width)
     .on("mousemove",handleMouse)
     .on("mousedown",handleMouse)
+
+
   bg.append("rect")
     .attr("x",0)
     .attr("y",MAP_HEIGHT+GUTTER)
@@ -482,6 +527,16 @@ function drawMap(topology) {
     .attr("height",TIMEBOX_HEIGHT)
     .attr("x",0)
     .attr("y",MAP_HEIGHT+GUTTER)
+
+  bg.append("g")
+    .attr("id",'exhibition-markers')
+
+  svg.append("text")
+    .attr("id", "instruction-text")
+    .text(INSTRUCTIONS)
+    .attr("text-anchor","middle")
+    .attr("x",width/2)
+    .attr("y",MAP_HEIGHT+GUTTER*.66)
 
   d3.select("body").on("mouseup", handleMouseUp)
 }

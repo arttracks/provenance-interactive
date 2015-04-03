@@ -15,3 +15,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'middleman-simple-thumbnailer', path: "/Users/david/Documents/opensource/middleman-simple-thumbnailer"
 gem 'ceaser-easing'
+gem 'middleman-gh-pages'
