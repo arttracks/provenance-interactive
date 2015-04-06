@@ -1,5 +1,5 @@
 ---
-title: Welcome to Middleman
+title: CMOA Provenance Interactive
 ---
 
 %script
@@ -25,7 +25,7 @@ title: Welcome to Middleman
         - next unless work && work.downloaded_image
         .grid-image{id: "work_#{work.id}"}
           = image_tag work.downloaded_image,  resize_to: '230x250^', class: 'thumbnail'
-      - (21-data.collection.count).times do
+      - (22-data.collection.count).times.each do
         .grid-image
   #grid-bottom
     %h1 
