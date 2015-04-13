@@ -23,20 +23,22 @@ var EXHIBIT_MARKER_HEIGHT = 10;
 var PGH_LOC               = [-79.99589,40.44062];
 var INSTRUCTIONS          = "Touch the timeline below to focus on a particular period."
 var DRAG_TIMEOUT_LENGTH   = 1500
+var INACTIVITY_TIMEOUT    = 1000*60*2
 
 // ----  VARIABLES  -----------------------------------------------------------
 
-var svg;            //  Main SVG element
-var worldMap;       //  Holder for the map elements
-var x;              //  Scale for the x axis
-var xAxis;          //  Axis for x
-var projection;     //  projection for the map
-var mapPath;        //  Actual map geometry
-var provenance;     //  The parsed data of provenance
-var events;         //  The parsed data for exhibition history
-var scale;          //  A fudge factor for map zooming
-var selectedDate;   //  The date currently selected in the timeline
-var dragTimeout;    //  A placeholder for a drag timeout.
+var svg;                 //  Main SVG element
+var worldMap;            //  Holder for the map elements
+var x;                   //  Scale for the x axis
+var xAxis;               //  Axis for x
+var projection;          //  projection for the map
+var mapPath;             //  Actual map geometry
+var provenance;          //  The parsed data of provenance
+var events;              //  The parsed data for exhibition history
+var scale;               //  A fudge factor for map zooming
+var selectedDate;        //  The date currently selected in the timeline
+var dragTimeout;         //  A variable to hold the id for the drag timeout.
+var interactivityTimeout; //  A variable to hold the id for the interaction timeout.
 
 
 
@@ -79,10 +81,12 @@ function handleMouse(d,i) {
     return;
   }
   clearTimeout(dragTimeout);
+  clearTimeout(interactivityTimeout)
   var m = d3.mouse(this);
   selectedDate = x.invert(m[0]);
   redraw();
   dragTimeout = setTimeout(handleMouseUp,DRAG_TIMEOUT_LENGTH);
+  interactivityTimeout = setTimeout(gotoHome,INACTIVITY_TIMEOUT);
 }
 
 //-----------------------------------------------------------------------------
@@ -565,6 +569,7 @@ function loadWorkOntoMap(n) {
 
   x.domain([creation,moment()]);
   redraw();
+  interactivityTimeout = setTimeout(gotoHome,INACTIVITY_TIMEOUT);
 }
 
 //-----------------------------------------------------------------------------

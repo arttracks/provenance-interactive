@@ -24,13 +24,13 @@ gotoImage = () ->
 
   loadWorkOntoMap(work.id); 
 
-gotoHome = () ->
+@gotoHome = () ->
   handleMouseUp()
   $('#holder').removeClass("single-item")
 
 $ () ->
   $(".grid-image").mousedown gotoImage
-  $("#back-button").mousedown gotoHome
+  $("#back-button").mousedown @gotoHome
   $('img').on 'dragstart', (event) ->
     event.preventDefault()
   $('body').keydown (e) ->
