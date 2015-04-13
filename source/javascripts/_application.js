@@ -21,8 +21,8 @@ var TIME_RANGE            = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
 var DEFINITE_PERCENT      = .15;
 var EXHIBIT_MARKER_HEIGHT = 10;
 var PGH_LOC               = [-79.99589,40.44062];
-
 var INSTRUCTIONS          = "Touch the timeline below to focus on a particular period."
+var DRAG_TIMEOUT_LENGTH   = 1500
 
 // ----  VARIABLES  -----------------------------------------------------------
 
@@ -36,6 +36,8 @@ var provenance;     //  The parsed data of provenance
 var events;         //  The parsed data for exhibition history
 var scale;          //  A fudge factor for map zooming
 var selectedDate;   //  The date currently selected in the timeline
+var dragTimeout;    //  A placeholder for a drag timeout.
+
 
 
 // ----  HELPER FUNCTIONS  ----------------------------------------------------
@@ -76,13 +78,17 @@ function handleMouse(d,i) {
   if (e.which != 1){
     return;
   }
+  clearTimeout(dragTimeout);
   var m = d3.mouse(this);
   selectedDate = x.invert(m[0]);
   redraw();
+  dragTimeout = setTimeout(handleMouseUp,DRAG_TIMEOUT_LENGTH);
 }
 
 //-----------------------------------------------------------------------------
 function handleMouseUp(d,i) {
+  console.log("mouseUp");
+  clearTimeout(dragTimeout)
   selectedDate = null;
   if ($(".singleItem") && provenance){
     redraw();
@@ -539,7 +545,7 @@ function drawMap(topology) {
     .attr("x",width/2)
     .attr("y",MAP_HEIGHT+GUTTER*.66)
 
-  d3.select("body").on("mouseup", handleMouseUp)
+  //d3.select("body").on("mouseup", handleMouseUp)
 }
 
 

@@ -7,8 +7,8 @@
     work.id == parseInt(id)
 
 gotoImage = () ->
-  work = getWork($(this).attr("id").split("_")[1])
   $('#holder').addClass("single-item")
+  work = getWork($(this).attr("id").split("_")[1])
   img = $("#preview_#{work.id}").attr("src")
   $('#preview-image').attr("src",img)
   $("#acc-num").text(work.accession_number)
@@ -25,10 +25,13 @@ gotoImage = () ->
   loadWorkOntoMap(work.id); 
 
 gotoHome = () ->
+  handleMouseUp()
   $('#holder').removeClass("single-item")
 
-
-$("body").on "click", '.grid-image', gotoImage
-$("body").on "click", "#back-button", gotoHome
-$('body').keydown (e) ->
-  $('body').toggleClass("no-cursor") if (e.which == 88)
+$ () ->
+  $(".grid-image").mousedown gotoImage
+  $("#back-button").mousedown gotoHome
+  $('img').on 'dragstart', (event) ->
+    event.preventDefault()
+  $('body').keydown (e) ->
+    $('body').toggleClass("no-cursor") if (e.which == 88)
