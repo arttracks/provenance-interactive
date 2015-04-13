@@ -20,6 +20,7 @@ var TIME_RANGE_YEARS      = 4;
 var TIME_RANGE            = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
 var DEFINITE_PERCENT      = .15;
 var EXHIBIT_MARKER_HEIGHT = 10;
+var PGH_LOC               = [-79.99589,40.44062];
 
 var INSTRUCTIONS          = "Touch the timeline below to focus on a particular period."
 
@@ -72,7 +73,7 @@ queue()
 //-----------------------------------------------------------------------------
 function handleMouse(d,i) {
   var e = d3.event;
-  if (e.buttons != 1){
+  if (e.which != 1){
     return;
   }
   var m = d3.mouse(this);
@@ -132,7 +133,7 @@ function drawOwnerMovementArcs() {
   movementPairs = movementPairs.map(function(d,i) {
     return {
       points: d,
-      date: provenance[i].beginning,
+      date: provenance[i+1].beginning,
       lastDate: provenance[i].ending
     };
   })
@@ -603,12 +604,13 @@ function buildEvents(data) {
   data.events.forEach(function(el){
     if (el.venues && el.venues[0].earliest) {
       var date_of_show = getDate(el.venues[0].earliest)
-      var home = {lng: -79.99589, lat: 40.44062};
+      var home = {lng: PGH_LOC[0], lat: PGH_LOC[1]};
+
       for (var q1 = 0; q1 < data["owners"].length; q1++) {
         var currentOwner = data["owners"][q1];
-        if (!currentOwner.location || !currentOwner.earliest_definite || !currentOwner.latest_definite) continue;
-        var owner_got_it_on = getDate(currentOwner.earliest_definite);
-        var owner_lost_it_on = getDate(currentOwner.latest_definite);
+        if (!currentOwner.location || !currentOwner.earliest_possible || !currentOwner.latest_possible) continue;
+        var owner_got_it_on = getDate(currentOwner.earliest_possible);
+        var owner_lost_it_on = getDate(currentOwner.latest_possible);
         if (owner_got_it_on < date_of_show && owner_lost_it_on > date_of_show) {
           home = currentOwner.location;
           break;
@@ -644,19 +646,21 @@ function buildEvents(data) {
 
 //-----------------------------------------------------------------------------
 function zoomMap(provenance, events) {
-  var xmin,xmax,ymin,ymax;
+  var xmin,xmax,ymin,ymax, bounds;
   var all_events = provenance.concat(events);
-  xmin = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lng) : p;},100000);
-  xmax = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lng) : p;},-100000);
-  ymin = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lat) : p;},100000);
-  ymax = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lat) : p;},-100000);
 
-  var bounds= [projection([xmin,ymin]),projection([xmax,ymax])];
+  // Calculate bounds
+  xmin   = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lng) : p;},100000);
+  xmax   = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lng) : p;},-100000);
+  ymin   = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.min(p,c.lat) : p;},100000);
+  ymax   = all_events.reduce(function(p, c, i, a) {return c.lng ? Math.max(p,c.lat) : p;},-100000);
+  bounds = [projection([xmin,ymin]),projection([xmax,ymax])];
 
-  var dx = bounds[1][0] - bounds[0][0],
-      dy = bounds[1][1] - bounds[0][1],
-      x = (bounds[0][0] + bounds[1][0]) / 2,
-      y = (bounds[0][1] + bounds[1][1]) / 2,
+  
+  var dx = (bounds[1][0] - bounds[0][0]),
+      dy = (bounds[1][1] - bounds[0][1]),
+      x  = (bounds[0][0] + bounds[1][0]) / 2,
+      y  = (bounds[0][1] + bounds[1][1]) / 2,
       scale = .9 / Math.max(dx / width, dy / MAP_HEIGHT),
       translate = [width / 2 - scale * x, MAP_HEIGHT / 2 - scale * y];
 
@@ -664,7 +668,7 @@ function zoomMap(provenance, events) {
     .style("stroke-width", 1.5 / scale + "px")
     .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 
-  var pgh = projection([-79.99589,40.44062]);  
+  var pgh = projection(PGH_LOC);  
   d3.select("#pghStar").attr("points", drawStar(pgh[0],pgh[1], 5, 10/scale, 5/scale))
 
   return scale;

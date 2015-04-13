@@ -30,3 +30,5 @@ gotoHome = () ->
 
 $("body").on "click", '.grid-image', gotoImage
 $("body").on "click", "#back-button", gotoHome
+$('body').keydown (e) ->
+  $('body').toggleClass("no-cursor") if (e.which == 88)
