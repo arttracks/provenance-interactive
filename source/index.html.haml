@@ -5,7 +5,7 @@ title: CMOA Provenance Interactive
 %script
   = "var collection = #{data.collection.compact.to_json}"
 
-#holder
+#holder.high-contrast
   #sidebar
     %img#preview-image
     #tombstone
@@ -14,6 +14,7 @@ title: CMOA Provenance Interactive
         %span.content
       #title
         %span.content
+      %h1 Provenance Record
       #provenance
     #back-button Back to<br>Main Screen
   #map
@@ -25,7 +26,7 @@ title: CMOA Provenance Interactive
         - next unless work && work.downloaded_image
         .grid-image{id: "work_#{work.id}"}
           = image_tag work.downloaded_image,  resize_to: '230x250^', class: 'thumbnail'
-      - (22-data.collection.count).times.each do
+      - (21-data.collection.count).times.each do
         .grid-image
   #grid-bottom
     %h1 

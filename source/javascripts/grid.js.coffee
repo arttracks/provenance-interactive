@@ -12,11 +12,17 @@ gotoImage = () ->
   img = $("#preview_#{work.id}").attr("src")
   $('#preview-image').attr("src",img)
   $("#acc-num").text(work.accession_number)
-  $("#title .content").html(work.title.replace("(","<br/><span class='subtitle'>(").replace(")",")</span>"))
+
+  name_and_date = work.title.replace("(","<span class='subtitle'>(").replace(")",")</span>")
+  date = moment(work.creation_date).format("YYYY")
+  name_and_date = "#{name_and_date}, #{date}"
+
+  $("#title .content").html(name_and_date)
+  
   $("#artist .content").text(work.artist.name)
 
   $('#artist').bigtext({ maxfontsize: 26, minfontsize: 15 })
-  $("#title").bigtext({ maxfontsize: 24, minfontsize: 15 })
+  $("#title").bigtext({ maxfontsize: 24, minfontsize: 18 })
 
 
   prov = ("<li>#{period.provenance}#{if period.direct_transfer then ";" else "."}</li>" for period in work.generated_provenance.period).join("")

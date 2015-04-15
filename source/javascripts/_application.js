@@ -21,7 +21,7 @@ var TIME_RANGE            = (1000*60*60*24*365)*TIME_RANGE_YEARS // years
 var DEFINITE_PERCENT      = .15;
 var EXHIBIT_MARKER_HEIGHT = 10;
 var PGH_LOC               = [-79.99589,40.44062];
-var INSTRUCTIONS          = "Touch the timeline below to focus on a particular period."
+var INSTRUCTIONS          = "Touch the timeline below to focus on a particular moment in time."
 var DRAG_TIMEOUT_LENGTH   = 1500
 var INACTIVITY_TIMEOUT    = 1000*60*2
 
@@ -196,8 +196,8 @@ function drawExhibitionMarkers() {
     .attr("y", MAP_HEIGHT + GUTTER)
     .attr("x", function(d){return x(d.date, d.lastDate)})
     .style("opacity",function(d){
-      if (!selectedDate) return .075;
-      return .075 + .75*yearOffset(selectedDate,d.date,d.lastDate);    
+      if (!selectedDate) return .25;
+      return .25 + .75*yearOffset(selectedDate,d.date,d.lastDate);    
     }); 
 }
 
