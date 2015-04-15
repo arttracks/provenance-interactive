@@ -81,7 +81,7 @@ function handleMouse(d,i) {
     return;
   }
   clearTimeout(dragTimeout);
-  clearTimeout(interactivityTimeout)
+  clearTimeout(interactivityTimeout);
   var m = d3.mouse(this);
   selectedDate = x.invert(m[0]);
   redraw();
@@ -92,7 +92,7 @@ function handleMouse(d,i) {
 //-----------------------------------------------------------------------------
 function handleMouseUp(d,i) {
   console.log("mouseUp");
-  clearTimeout(dragTimeout)
+  clearTimeout(dragTimeout);
   selectedDate = null;
   if ($(".singleItem") && provenance){
     redraw();
@@ -569,6 +569,8 @@ function loadWorkOntoMap(n) {
 
   x.domain([creation,moment()]);
   redraw();
+
+  clearTimeout(interactivityTimeout);
   interactivityTimeout = setTimeout(gotoHome,INACTIVITY_TIMEOUT);
 }
 
