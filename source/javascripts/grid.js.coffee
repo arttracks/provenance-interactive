@@ -15,7 +15,7 @@ gotoImage = () ->
 
   name_and_date = work.title.replace("(","<span class='subtitle'>(").replace(")",")</span>")
   date = moment(work.creation_date).format("YYYY")
-  name_and_date = "#{name_and_date}, #{date}"
+  name_and_date = "#{name_and_date}<span class='title-date'>, #{date}</span>"
 
   $("#title .content").html(name_and_date)
   
