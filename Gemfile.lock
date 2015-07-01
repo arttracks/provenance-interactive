@@ -1,7 +1,7 @@
 PATH
   remote: /Users/david/Documents/opensource/middleman-simple-thumbnailer
   specs:
-    middleman-simple-thumbnailer (1.0.0)
+    middleman-simple-thumbnailer (1.0.2)
       middleman-core (~> 3)
       mini_magick (~> 4)
 

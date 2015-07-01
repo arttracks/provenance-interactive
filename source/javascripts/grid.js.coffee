@@ -19,13 +19,21 @@ gotoImage = () ->
 
   $("#title .content").html(name_and_date)
   
-  $("#artist .content").text(work.artist.name)
+  birth = jd_to_cal(work.generated_provenance.period[0].birth).format("YYYY")
+  death = jd_to_cal(work.generated_provenance.period[0].death).format("YYYY")
+  artistName = "#{work.artist.name} (#{birth}-#{death})"
+
+  $("#artist .content").text(artistName)
 
   $('#artist').bigtext({ maxfontsize: 26, minfontsize: 15 })
   $("#title").bigtext({ maxfontsize: 24, minfontsize: 18 })
 
 
   prov = ("<li>#{period.provenance}#{if period.direct_transfer then ";" else "."}</li>" for period in work.generated_provenance.period).join("")
+  prov = prov.replace(/\s\[.*?-.*?\]/g,"");    # Remove the artist's birth/death dates
+  prov = prov.replace(/[\(|\)]/g,"");          # Remove parens
+  prov = prov.replace(/, stock no.*?(;)/g,"$1"); # Remove stock numbers
+
   $('#provenance').html("<ul>#{prov}</ul>")
 
   loadWorkOntoMap(work.id); 
