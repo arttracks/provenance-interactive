@@ -6,10 +6,12 @@ The interactive by default shows a grid of available artwork.  Touching any of t
 
 ![Preview image of the introduction screen](docs/main_screen.png)
 
-Because the interactive was designed to work with a touchscreen, by default the mouse cursor is invisible.  **Press the `X` key to toggle the cursor's visibility at any time.**  
+Because the interactive was designed to work with a touchscreen, by default the mouse cursor is invisible.  
+
+**Press the `X` key to toggle the cursor's visibility at any time.**  
 
 
-![Preview image of a detail screen showing Paul Cézanne's Self Portrait and a map of the world with individual transaction locations marked with pins](docs/main_screen.png)
+![Preview image of a detail screen showing Paul Cézanne's Self Portrait and a map of the world with individual transaction locations marked with pins](docs/detail_screen.png)
 
 Each detail screen shows the provenance text of the object, along with a visualization that shows the ownership history and location history of the object visualized in space and time.  Each colored bar indicates the a possible period of ownership by that individual, and the white lines indicate exhibitions in the work's history.  By touching the timeline, an user can choose to focus the visualization on a specific moment in history, showing where the work might have been located at that time.  Dragging along the timeline will visualize the movement of the work through time and space.
 
@@ -54,8 +56,8 @@ And then open <http://localhost:4567/> in a web browser.
 *(Note that these instructions require you to work at the Carnegie Museum of Art and aren't  useful for anyone else. They detail internal steps needed to reprocess the data and extract the images from our internal servers and they reference internal libraries and code.  Also, as an aside to future me, they're somewhat out of date, since they use v.0.1 of the museum_provenance libraries and were written before the Archives project gave us better image access libraries.)*
 
 
-1. Get an export
-2. Convert the export to json
+1). Get an export  
+2). Convert the export to json  
 
 ```
 cmoa
@@ -64,8 +66,8 @@ arttracks convert <XML_FILE> --intranet
 # once for each of the three exports
 ```
 
-3. copy the data files into the provenance_reporter directory
-4. run the provenance reporter
+3). copy the data files into the provenance_reporter directory  
+4). run the provenance reporter
 
 ```
 cmoa
@@ -74,21 +76,20 @@ bundle exec ruby test.rb
 
 ```
 
-5. run the images script
+5). run the images script
 
 ```
 bundle exec ruby images.rb
 # note that you must be on CMOA internal network, and not connected to WIFI
 ```
 
-copy the images in the gallery8 directory to `gallery_interactive`
+6). copy the images in the gallery8 directory to `gallery_interactive`
 
 ```
 cmoa
 cd gallery_interactive
 middleman server
 # verify that it worked, then ^c to exit the middleman server
-
 git add .
 git commit -m "this is my message"
 rake build
