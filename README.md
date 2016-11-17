@@ -1,15 +1,21 @@
 This software is the Alpha prototype of a gallery interactive created by the Art Tracks team at the Carnegie Museum of Art in early 2015.  It was designed to run on a touchscreen located inside of our Impressionist Gallery.
 
+If you're interested in seeing a working version of this interactive, please visit <http://cmoa.github.io/provenance-interactive/>.
+
+
+## Main Screen
+
+![Preview image of the introduction screen](docs/main_screen.png)
+
 The creatively named "Provenance Interactive" visualizes the movement of works of art across space and time.  It is designed to be installed with the actual works of art surrounding the object, so it does not emphasize images of the actual works themselves.
 
 The interactive by default shows a grid of available artwork.  Touching any of these artworks will bring up a detail visualization of that work.  After a fixed duration, the interactive will reset to this screen.
-
-![Preview image of the introduction screen](docs/main_screen.png)
 
 Because the interactive was designed to work with a touchscreen, by default the mouse cursor is invisible.  
 
 **Press the `X` key to toggle the cursor's visibility at any time.**  
 
+## Detail Screen
 
 ![Preview image of a detail screen showing Paul Cézanne's Self Portrait and a map of the world with individual transaction locations marked with pins](docs/detail_screen.png)
 
@@ -17,7 +23,7 @@ Each detail screen shows the provenance text of the object, along with a visuali
 
 *(This interactive was designed to work on a screen with a fixed resolution using the Chrome browser.  It has not been tested in other browsers, and it does not adjust to different resolutions.  Needless to say, it's also not mobile-friendly.)*
 
-If you're interested in seeing a working version of this interactive, please visit <http://cmoa.github.io/provenance-interactive/>.
+
 
 This project was generously funded by the Institute for Museum and Library Services as part of the Art Tracks project.
 
