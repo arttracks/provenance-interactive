@@ -1,6 +1,6 @@
 This software is the Alpha prototype of a gallery interactive created by the Art Tracks team at the [Carnegie Museum of Art](http://www.cmoa.org) in early 2015.  It was designed to run on a touchscreen located inside of our Impressionist Gallery. 
 
-If you're interested in seeing a working version of this interactive, please visit <http://cmoa.github.io/provenance-interactive/>.
+If you're interested in seeing a working version of this interactive, please visit <http://arttracks.github.io/provenance-interactive/>.
 
 This project was generously funded by the [Institute for Museum and Library Services](http://imls.gov) as part of the [Art Tracks](http://www.museumprovenance.org) project.
 
