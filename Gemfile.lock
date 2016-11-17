@@ -6,7 +6,7 @@ PATH
       mini_magick (~> 4)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     activesupport (4.1.10)
       i18n (~> 0.6, >= 0.6.9)
@@ -144,3 +144,6 @@ DEPENDENCIES
   middleman-simple-thumbnailer!
   tzinfo-data
   wdm (~> 0.1.0)
+
+BUNDLED WITH
+   1.12.5

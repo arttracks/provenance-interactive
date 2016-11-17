@@ -198,8 +198,8 @@
           "primary_owner": true,
           "earliest_possible": 2437756,
           "earliest_definite": 2437785,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 4,
           "acquisition_timestring": "April 1962",
           "deacquisition_timestring": "",
@@ -409,9 +409,9 @@
       {
         "name": "Carnegie Museum of Art",
         "earliest_possible": "1962-04-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1962-04-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -430,7 +430,7 @@
     "accession_number": "70.50",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=146593",
     "creation_date": "1935-01-01",
-    "provenance": "Pierre Bonnard [1867-1947], France, until 1947; estate of Pierre Bonnard, France, 1947; Private collection, Paris, France, 1948; Mr. (1897-1984) and Mrs. Charles Zadok, New York, NY, by 1964 [1]; Mrs. Eugenia \"Genia\" Zadok (1900-1988), New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970.   NOTES: [1]. They lent the painting to the exhibition \"Bonnard and his Environment\", October 1964-May 1965.",
+    "provenance": "Pierre Bonnard [1867-1947], France, until 1947; estate of Pierre Bonnard, France, 1947; Private collection, Paris, France, 1948; Mr. (1897-1984) and Mrs. Charles Zadok, New York, NY, by 1964 [1]; Mrs. Eugenia \"Genia\" Zadok (1900-1988), New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970.   Notes: [1]. They lent the painting to the exhibition \"Bonnard and his Environment\", October 1964-May 1965.",
     "generated_provenance": {
       "period": [
         {
@@ -654,21 +654,60 @@
           "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970",
           "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2440922,
           "earliest_definite": 2440952,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2440952,
+          "latest_possible": 2457268,
           "order": 5,
           "acquisition_timestring": "December 1970",
           "deacquisition_timestring": "",
           "timestring": "December 1970"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2440952,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 6,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Pierre Bonnard [1867-1947], France, until 1947; estate of Pierre Bonnard, France, 1947; Private collection, Paris, France, 1948; Mr. and Mrs. Charles Zadok [1897-1984], New York, NY, by 1964 [1]; Mrs. Eugenia \"Genia\" Zadok [1900-1988], New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970. NOTES: [1] . They lent the painting to the exhibition \"Bonnard and his Environment\", October 1964-May 1965."
+      "provenance": "Pierre Bonnard [1867-1947], France, until 1947; estate of Pierre Bonnard, France, 1947; Private collection, Paris, France, 1948; Mr. and Mrs. Charles Zadok [1897-1984], New York, NY, by 1964 [1]; Mrs. Eugenia \"Genia\" Zadok [1900-1988], New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1970. Notes:. NOTES: [1] . They lent the painting to the exhibition \"Bonnard and his Environment\", October 1964-May 1965."
     },
     "artist": {
       "name": "Pierre Bonnard",
@@ -938,15 +977,22 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1970-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1970-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1970-12-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1970-12-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1015853_nude-in-bathtub.jpg"
@@ -959,7 +1005,7 @@
     "accession_number": "22.8",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=125753",
     "creation_date": "1891-01-01",
-    "provenance": "Mary Cassatt [1844-1926], France; Galeries Durand-Ruel, Paris, France, by August 1892 [1]; Durand-Ruel Galleries, New York, NY, 1895; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922.   NOTES: [1]. Recorded in stock book in August 1892.",
+    "provenance": "Mary Cassatt [1844-1926], France; Galeries Durand-Ruel, Paris, France, by August 1892 [1]; Durand-Ruel Galleries, New York, NY, 1895; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922.   Notes: [1]. Recorded in stock book in August 1892.",
     "generated_provenance": {
       "period": [
         {
@@ -1105,21 +1151,60 @@
           "original_text": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922",
           "provenance": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2423329,
           "earliest_definite": 2423359,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2423359,
+          "latest_possible": 2457268,
           "order": 3,
           "acquisition_timestring": "October 1922",
           "deacquisition_timestring": "",
           "timestring": "October 1922"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2423359,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 4,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Mary Cassatt [1844-1926], France; Galeries Durand-Ruel, Paris, France, by August 1892 [1]; Durand-Ruel Galleries, New York, NY, 1895; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922. NOTES: [1] . Recorded in stock book in August 1892."
+      "provenance": "Mary Cassatt [1844-1926], France; Galeries Durand-Ruel, Paris, France, by August 1892 [1]; Durand-Ruel Galleries, New York, NY, 1895; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1922. Notes:. NOTES: [1] . Recorded in stock book in August 1892."
     },
     "artist": {
       "name": "Mary Cassatt",
@@ -1873,15 +1958,22 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1922-10-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1922-10-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1922-10-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1922-10-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1004771_young-women-picking-fruit.jpg"
@@ -1968,8 +2060,8 @@
           "primary_owner": true,
           "earliest_possible": 2415021,
           "earliest_definite": 2415051,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 1,
           "acquisition_timestring": "January 1900",
           "deacquisition_timestring": "",
@@ -2374,9 +2466,9 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1900-01-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1900-01-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -2937,8 +3029,8 @@
           "primary_owner": true,
           "earliest_possible": 2439217,
           "earliest_definite": 2439246,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 13,
           "acquisition_timestring": "April 1966",
           "deacquisition_timestring": "",
@@ -3393,9 +3485,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1966-04-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1966-04-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -3644,8 +3736,8 @@
           "primary_owner": true,
           "earliest_possible": 2438000,
           "earliest_definite": 2438030,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 5,
           "acquisition_timestring": "December 1962",
           "deacquisition_timestring": "",
@@ -3959,9 +4051,9 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1962-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1962-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -3980,7 +4072,7 @@
     "accession_number": "73.3.3",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=17592",
     "creation_date": "1882-01-01",
-    "provenance": "Claude Oscar Monet [1840-1926], France, until 1884; purchased by Durand-Ruel, Paris, France, 1884 until 1891; sold to J. E. Chase, Boston, MA, April 20, 1891 [1]; Higginson, 1891 until April 1907 [2]; purchased by Durand-Ruel, Paris, France, April 1907; Durand-Ruel, New York, NY, by June 1936 [3]. Sam Salz, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973    NOTES: [1]. Recorded as \"For Higginson\", likely Henry Lee Higginson [1834-1919], Boston, MA. J.E. Chase was probably acting as Higginson's agent. [2]. Received by Durand-Ruel on consignment from Higginson, April 1906; purchased by Durand Ruel, April 1907 (see correspondence with Sam Salz in curatorial file).  [2]. Durand -Ruel Ph. A1035, NY 7395. Durand-Ruel Galleries, New York is recorded as the lender for the painting in \"The Centennial Exposition\", Dallas Museum of Fine Arts, June 6 to November 29, 1936.",
+    "provenance": "Claude Oscar Monet [1840-1926], France, until 1884; purchased by Durand-Ruel, Paris, France, 1884 until 1891; sold to J. E. Chase, Boston, MA, April 20, 1891 [1]; Higginson, 1891 until April 1907 [2]; purchased by Durand-Ruel, Paris, France, April 1907; Durand-Ruel, New York, NY, by June 1936 [3]. Sam Salz, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973    Notes: [1]. Recorded as \"For Higginson\", likely Henry Lee Higginson [1834-1919], Boston, MA. J.E. Chase was probably acting as Higginson's agent. [2]. Received by Durand-Ruel on consignment from Higginson, April 1906; purchased by Durand Ruel, April 1907 (see correspondence with Sam Salz in curatorial file).  [2]. Durand -Ruel Ph. A1035, NY 7395. Durand-Ruel Galleries, New York is recorded as the lender for the painting in \"The Centennial Exposition\", Dallas Museum of Fine Arts, June 6 to November 29, 1936.",
     "generated_provenance": {
       "period": [
         {
@@ -4265,7 +4357,7 @@
           "birth_certainty": null,
           "death": null,
           "death_certainty": null,
-          "location": "Pittsburgh, PA",
+          "location": "Pittsburgh, PA Notes:",
           "location_certainty": true,
           "botb": 2441715,
           "botb_certainty": true,
@@ -4279,24 +4371,24 @@
           "eote": null,
           "eote_certainty": null,
           "eote_precision": null,
-          "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973",
-          "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973",
-          "parsable": true,
+          "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973    Notes:",
+          "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA Notes:, February 1973",
+          "parsable": false,
           "direct_transfer": null,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2441715,
           "earliest_definite": 2441742,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "February 1973",
           "deacquisition_timestring": "",
           "timestring": "February 1973"
         }
       ],
-      "provenance": "Claude Oscar Monet [1840-1926], France, until 1884; purchased by Durand-Ruel, Paris, France, 1884 until 1891; sold to J. E. Chase, Boston, MA, April 20, 1891 [1]; Higginson, 1891 until April 1907 [2]; purchased by Durand-Ruel, Paris, France, April 1907; Durand-Ruel, New York, NY, by June 1936 [3]. Sam Salz, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, February 1973. NOTES: [1] . Recorded as \"For Higginson\", likely Henry Lee Higginson [2] . Durand -Ruel Ph. A1035, NY 7395. Durand-Ruel Galleries, New York is recorded as the lender for the painting in \"The Centennial Exposition\", Dallas Museum of Fine Arts, June 6 to November 29, 1936."
+      "provenance": "Claude Oscar Monet [1840-1926], France, until 1884; purchased by Durand-Ruel, Paris, France, 1884 until 1891; sold to J. E. Chase, Boston, MA, April 20, 1891 [1]; Higginson, 1891 until April 1907 [2]; purchased by Durand-Ruel, Paris, France, April 1907; Durand-Ruel, New York, NY, by June 1936 [3]. Sam Salz, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA Notes:, February 1973. NOTES: [1] . Recorded as \"For Higginson\", likely Henry Lee Higginson [2] . Durand -Ruel Ph. A1035, NY 7395. Durand-Ruel Galleries, New York is recorded as the lender for the painting in \"The Centennial Exposition\", Dallas Museum of Fine Arts, June 6 to November 29, 1936."
     },
     "artist": {
       "name": "Claude Oscar Monet",
@@ -4548,15 +4640,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1973-02-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1973-02-28",
-        "latest_definite": "2015-08-13",
-        "location": {
-          "lat": 40.44062,
-          "lng": -79.99589,
-          "name": "Pittsburgh",
-          "geonameId": 5206379
-        }
+        "latest_definite": "2015-09-02"
       }
     ],
     "downloaded_image": "gallery_8/1016715_cliffs-near-dieppe.jpg"
@@ -4569,7 +4655,7 @@
     "accession_number": "65.35",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=132413",
     "creation_date": "1876-01-01",
-    "provenance": "Pierre Auguste Renoir [1841-1919], France; Eugène Murer [1846-1906], Paris, France and Auvers-sur-Oise, France, until 1884; with Galerie Durand-Ruel, Paris, France, 1884 until 1886 [1]; possibly Pierre Auguste Renoir [1841-1919], Paris, France [2]; acquired by Galerie Durand-Ruel, Paris, France, on April 29, 1890 [3]; Durand-Ruel Gallery, New York, NY, 1917; Sam Salz, New York, NY [4]; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965.   NOTES: [1]. Livre de depôt no. D. 10078, with no indication of provenance, but ‘Murer, sans doute’, as per letter from Charles Durand-Ruel to Sam Salz, November 2, 1965 in curatorial file.  [2]. See \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 1, no. 96. [3]. Acquired for 500 F, as per reference in note [2] above; Durand-Ruel no. 1530, D. 13796. [4]. Sam Salz was President of 19th and 20th Century French Art, Inc. in New York.",
+    "provenance": "Pierre Auguste Renoir [1841-1919], France; Eugène Murer [1846-1906], Paris, France and Auvers-sur-Oise, France, until 1884; with Galerie Durand-Ruel, Paris, France, 1884 until 1886 [1]; possibly Pierre Auguste Renoir [1841-1919], Paris, France [2]; acquired by Galerie Durand-Ruel, Paris, France, on April 29, 1890 [3]; Durand-Ruel Gallery, New York, NY, 1917; Sam Salz, New York, NY [4]; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965.   Notes: [1]. Livre de depôt no. D. 10078, with no indication of provenance, but ‘Murer, sans doute’, as per letter from Charles Durand-Ruel to Sam Salz, November 2, 1965 in curatorial file.  [2]. See \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 1, no. 96. [3]. Acquired for 500 F, as per reference in note [2] above; Durand-Ruel no. 1530, D. 13796. [4]. Sam Salz was President of 19th and 20th Century French Art, Inc. in New York.",
     "generated_provenance": {
       "period": [
         {
@@ -4871,21 +4957,60 @@
           "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965",
           "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2439096,
           "earliest_definite": 2439126,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2439126,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "December 1965",
           "deacquisition_timestring": "",
           "timestring": "December 1965"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439126,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 8,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Pierre Auguste Renoir [1841-1919], France; Eugène Murer [1846-1906], Paris, France and Auvers-sur-Oise, France, until 1884; with Galerie Durand-Ruel, Paris, France, 1884 until 1886 [1]; Possibly Pierre Auguste Renoir [1841-1919], Paris, France [2]; acquired by Galerie Durand-Ruel, Paris, France, on April 29, 1890 [3]; Durand-Ruel Gallery, New York, NY, 1917; Sam Salz, New York, NY [4]; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965. NOTES: [1] . Livre de depôt no. D. 10078, with no indication of provenance, but ‘Murer, sans doute’, as per letter from Charles Durand-Ruel to Sam Salz, November 2, 1965 in curatorial file. [2] above; Durand-Ruel no. 1530, D. 13796. [3] . Acquired for 500 F, as per reference in note [4] . Sam Salz was President of 19th and 20th Century French Art, Inc. in New York."
+      "provenance": "Pierre Auguste Renoir [1841-1919], France; Eugène Murer [1846-1906], Paris, France and Auvers-sur-Oise, France, until 1884; with Galerie Durand-Ruel, Paris, France, 1884 until 1886 [1]; Possibly Pierre Auguste Renoir [1841-1919], Paris, France [2]; acquired by Galerie Durand-Ruel, Paris, France, on April 29, 1890 [3]; Durand-Ruel Gallery, New York, NY, 1917; Sam Salz, New York, NY [4]; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, December 1965. Notes:. NOTES: [1] . Livre de depôt no. D. 10078, with no indication of provenance, but ‘Murer, sans doute’, as per letter from Charles Durand-Ruel to Sam Salz, November 2, 1965 in curatorial file. [2] above; Durand-Ruel no. 1530, D. 13796. [3] . Acquired for 500 F, as per reference in note [4] . Sam Salz was President of 19th and 20th Century French Art, Inc. in New York."
     },
     "artist": {
       "name": "Pierre Auguste Renoir",
@@ -5368,15 +5493,22 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1965-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1965-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1965-12-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1965-12-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1011959_the-garden-in-the-rue-cortot-montmartre.jpg"
@@ -5389,7 +5521,7 @@
     "accession_number": "53.22",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=132919",
     "creation_date": "1868-01-01",
-    "provenance": "Claude Oscar Monet [1840-1926], France. Possibly M. Guillemet, by 1879 [1]. Bernheim-Jeune, Paris, France. Percy Turner, London, England. Private Collection, England; Arthur Tooth & Sons, Ltd., London, England; Sam Salz (1894-1981), Inc., New York, NY, by May 1953; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953.   NOTES: [1]. The painting was possibly exhibited in the 4th Impressionist Exhibition in 1879 as \"Etude de mer\", described in the catalogue as \"Appartient à M. Guillemet\". See \"The New Painting: Impressionism 1874-1886\", directed and coordinated by Charles S. Moffet with the assistance of Ruth Berson et al, Richard Burton SA, Publishers, Geneva, Switzerland, 1986, p. 269.",
+    "provenance": "Claude Oscar Monet [1840-1926], France. Possibly M. Guillemet, by 1879 [1]. Bernheim-Jeune, Paris, France. Percy Turner, London, England. Private Collection, England; Arthur Tooth & Sons, Ltd., London, England; Sam Salz (1894-1981), Inc., New York, NY, by May 1953; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953.   Notes: [1]. The painting was possibly exhibited in the 4th Impressionist Exhibition in 1879 as \"Etude de mer\", described in the catalogue as \"Appartient à M. Guillemet\". See \"The New Painting: Impressionism 1874-1886\", directed and coordinated by Charles S. Moffet with the assistance of Ruth Berson et al, Richard Burton SA, Publishers, Geneva, Switzerland, 1986, p. 269.",
     "generated_provenance": {
       "period": [
         {
@@ -5691,21 +5823,60 @@
           "original_text": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953",
           "provenance": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2434530,
           "earliest_definite": 2434559,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2434559,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "June 1953",
           "deacquisition_timestring": "",
           "timestring": "June 1953"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2434559,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 8,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Claude Oscar Monet [1840-1926], France. Possibly M. Guillemet, by 1879 [1]. Bernheim-Jeune, Paris, France. Percy Turner, London, England. Private Collection, England; Arthur Tooth & Sons, Ltd., London, England; Sam Salz, Inc. [1894-1981], New York, NY, by May 1953; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953. NOTES: [1] . The painting was possibly exhibited in the 4th Impressionist Exhibition in 1879 as \"Etude de mer\", described in the catalogue as \"Appartient à M. Guillemet\". See \"The New Painting: Impressionism 1874-1886\", directed and coordinated by Charles S. Moffet with the assistance of Ruth Berson et al, Richard Burton SA, Publishers, Geneva, Switzerland, 1986, p. 269."
+      "provenance": "Claude Oscar Monet [1840-1926], France. Possibly M. Guillemet, by 1879 [1]. Bernheim-Jeune, Paris, France. Percy Turner, London, England. Private Collection, England; Arthur Tooth & Sons, Ltd., London, England; Sam Salz, Inc. [1894-1981], New York, NY, by May 1953; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, June 1953. Notes:. NOTES: [1] . The painting was possibly exhibited in the 4th Impressionist Exhibition in 1879 as \"Etude de mer\", described in the catalogue as \"Appartient à M. Guillemet\". See \"The New Painting: Impressionism 1874-1886\", directed and coordinated by Charles S. Moffet with the assistance of Ruth Berson et al, Richard Burton SA, Publishers, Geneva, Switzerland, 1986, p. 269."
     },
     "artist": {
       "name": "Claude Oscar Monet",
@@ -6054,15 +6225,22 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1953-06-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1953-06-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1953-06-30",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1953-06-30",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1009147_the-sea-at-le-havre.jpg"
@@ -6227,8 +6405,8 @@
           "primary_owner": true,
           "earliest_possible": 2439582,
           "earliest_definite": 2439611,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 3,
           "acquisition_timestring": "April 1967",
           "deacquisition_timestring": "",
@@ -6515,9 +6693,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1967-04-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1967-04-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -6883,8 +7061,8 @@
           "primary_owner": true,
           "earliest_possible": 2438882,
           "earliest_definite": 2438912,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 8,
           "acquisition_timestring": "May 1965",
           "deacquisition_timestring": "",
@@ -7107,9 +7285,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1965-05-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1965-05-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -7553,8 +7731,8 @@
           "primary_owner": true,
           "earliest_possible": 2439948,
           "earliest_definite": 2439977,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 10,
           "acquisition_timestring": "April 1968",
           "deacquisition_timestring": "",
@@ -7874,9 +8052,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1968-04-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1968-04-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -7895,7 +8073,7 @@
     "accession_number": "65.30.2",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=334",
     "creation_date": "1885-01-01",
-    "provenance": "Pierre Auguste Renoir [1841-1919], France. Possibly Durand-Ruel, Paris, France, by 1900 [1]; purchased by Bernheim-Jeune, Paris, France, July 5, 1905 (stock no. 14406) [2]; sold to Alexandre Louis Philippe Marie Berthier, 4th Prince de Wagram [1883-1918], Boissy-Saint-Léger, France, on July 18, 1905; Jos Hessel (1859-1942), Paris, France, by 1917 until at least 1929 [3]. Jacques Laroche [4]; Durand-Ruel Family Collection, Paris, France [5]; Durand-Ruel, Paris, France and New York, NY, by November 1941 [6]; Sam Salz (1894-1981), Inc., New York, NY, by 1965; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965.   NOTES:  [1]. Label on back of painting with partial id no. from Durand Ruel, 16 Rue Laffitte, Paris, where the gallery was located until 1920; see also photo of exhibition room at Durand Ruel’s in Paris in Walter Feilchenfeldt’s \"By Appointment Only\", p.22.) [2]. From label on the back of the painting. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2408. BJ Photo no. 10662. [3]. Most commonly used name for the dealer Joseph Hessel who is also sometimes known as Josse Hessel.  He lent the painting to an exhibition in Zurich in October 1917.  In the 1929 edition of \"Renoir\" by Julius Meier-Graefe, the painting is illustrated on p.266 as belonging to Hessel. [4]. From correspondence with Sam Salz in curatorial file.  [5]. From correspondence with Sam Salz in curatorial file.  [6]. D 15938; No. 11347. Durand Ruel, New York lent the painting to an exhibition at the Duveen Galleries in New York in November 1941.",
+    "provenance": "Pierre Auguste Renoir [1841-1919], France. Possibly Durand-Ruel, Paris, France, by ca.1900 [1]; purchased by Bernheim-Jeune, Paris, France, July 5, 1905 (stock no. 14406) [2]; sold to Alexandre Louis Philippe Marie Berthier, 4th Prince de Wagram [1883-1918], Boissy-Saint-Léger, France, on July 18, 1905; Jos Hessel (1859-1942), Paris, France, by 1917 until at least 1929 [3]. Jacques Laroche [4]; Durand-Ruel Family Collection, Paris, France [5]; Durand-Ruel, Paris, France and New York, NY, by November 1941 [6]; Sam Salz (1894-1981), Inc., New York, NY, by 1965; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965.   Notes:  [1]. Label on back of painting with partial id no. from Durand Ruel, 16 Rue Laffitte, Paris, where the gallery was located until 1920; see also photo of exhibition room at Durand Ruel’s in Paris in Walter Feilchenfeldt’s \"By Appointment Only\", p.22.) [2]. From label on the back of the painting. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2408. BJ Photo no. 10662. [3]. Most commonly used name for the dealer Joseph Hessel who is also sometimes known as Josse Hessel.  He lent the painting to an exhibition in Zurich in October 1917.  In the 1929 edition of \"Renoir\" by Julius Meier-Graefe, the painting is illustrated on p.266 as belonging to Hessel. [4]. From correspondence with Sam Salz in curatorial file.  [5]. From correspondence with Sam Salz in curatorial file.  [6]. D 15938; No. 11347. Durand Ruel, New York lent the painting to an exhibition at the Duveen Galleries in New York in November 1941.",
     "generated_provenance": {
       "period": [
         {
@@ -7946,11 +8124,11 @@
           "birth_certainty": null,
           "death": null,
           "death_certainty": null,
-          "location": "Paris, France",
+          "location": "Paris, France by ca.",
           "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": 0,
+          "botb": 2415021,
+          "botb_certainty": true,
+          "botb_precision": 1,
           "eotb": 2415385,
           "eotb_certainty": true,
           "eotb_precision": 1,
@@ -7960,21 +8138,21 @@
           "eote": null,
           "eote_certainty": null,
           "eote_precision": null,
-          "original_text": "Possibly Durand-Ruel, Paris, France, by 1900",
-          "provenance": "Possibly Durand-Ruel, Paris, France, by 1900",
-          "parsable": true,
+          "original_text": "Possibly Durand-Ruel, Paris, France, by ca.1900",
+          "provenance": "Possibly Durand-Ruel, Paris, France by ca., 1900",
+          "parsable": false,
           "direct_transfer": true,
           "stock_number": null,
           "footnote": ". Label on back of painting with partial id no. from Durand Ruel, 16 Rue Laffitte, Paris, where the gallery was located until 1920; see also photo of exhibition room at Durand Ruel’s in Paris in Walter Feilchenfeldt’s \"By Appointment Only\", p.22.)",
           "primary_owner": true,
-          "earliest_possible": 2393472,
+          "earliest_possible": 2415021,
           "earliest_definite": 2415385,
           "latest_definite": 2417032,
           "latest_possible": 2417032,
           "order": 1,
-          "acquisition_timestring": "by 1900",
+          "acquisition_timestring": "1900",
           "deacquisition_timestring": "",
-          "timestring": "by 1900"
+          "timestring": "1900"
         },
         {
           "period_certainty": true,
@@ -8275,21 +8453,60 @@
           "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965",
           "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2439035,
           "earliest_definite": 2439065,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2439065,
+          "latest_possible": 2457268,
           "order": 9,
           "acquisition_timestring": "October 1965",
           "deacquisition_timestring": "",
           "timestring": "October 1965"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439065,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 10,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Pierre Auguste Renoir [1841-1919], France. Possibly Durand-Ruel, Paris, France, by 1900 [1]; purchased by Bernheim-Jeune, Paris, France, July 5, 1905, stock no. 14406) [2]; sold to Alexandre Louis Philippe Marie Berthier, 4th Prince de Wagram [1883-1918], Boissy-Saint-Léger, France, on July 18, 1905; Jos Hessel [1859-1942], Paris, France, by 1917 until at least 1929 [3]. Jacques Laroche [4]; Durand-Ruel Family Collection, Paris, France [5]; Durand-Ruel, Paris, France and New York, NY, by November 1941 [6]; Sam Salz, Inc. [1894-1981], New York, NY, by 1965; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965. NOTES: [1] . Label on back of painting with partial id no. from Durand Ruel, 16 Rue Laffitte, Paris, where the gallery was located until 1920; see also photo of exhibition room at Durand Ruel’s in Paris in Walter Feilchenfeldt’s \"By Appointment Only\", p.22.) [2] . From label on the back of the painting. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2408. BJ Photo no. 10662. [3] . Most commonly used name for the dealer Joseph Hessel who is also sometimes known as Josse Hessel.  He lent the painting to an exhibition in Zurich in October 1917.  In the 1929 edition of \"Renoir\" by Julius Meier-Graefe, the painting is illustrated on p.266 as belonging to Hessel. [4] . From correspondence with Sam Salz in curatorial file. [5] . From correspondence with Sam Salz in curatorial file. [6] . D 15938; No. 11347. Durand Ruel, New York lent the painting to an exhibition at the Duveen Galleries in New York in November 1941."
+      "provenance": "Pierre Auguste Renoir [1841-1919], France. Possibly Durand-Ruel, Paris, France by ca., 1900 [1]; purchased by Bernheim-Jeune, Paris, France, July 5, 1905, stock no. 14406) [2]; sold to Alexandre Louis Philippe Marie Berthier, 4th Prince de Wagram [1883-1918], Boissy-Saint-Léger, France, on July 18, 1905; Jos Hessel [1859-1942], Paris, France, by 1917 until at least 1929 [3]. Jacques Laroche [4]; Durand-Ruel Family Collection, Paris, France [5]; Durand-Ruel, Paris, France and New York, NY, by November 1941 [6]; Sam Salz, Inc. [1894-1981], New York, NY, by 1965; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965. Notes:. NOTES: [1] . Label on back of painting with partial id no. from Durand Ruel, 16 Rue Laffitte, Paris, where the gallery was located until 1920; see also photo of exhibition room at Durand Ruel’s in Paris in Walter Feilchenfeldt’s \"By Appointment Only\", p.22.) [2] . From label on the back of the painting. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2408. BJ Photo no. 10662. [3] . Most commonly used name for the dealer Joseph Hessel who is also sometimes known as Josse Hessel.  He lent the painting to an exhibition in Zurich in October 1917.  In the 1929 edition of \"Renoir\" by Julius Meier-Graefe, the painting is illustrated on p.266 as belonging to Hessel. [4] . From correspondence with Sam Salz in curatorial file. [5] . From correspondence with Sam Salz in curatorial file. [6] . D 15938; No. 11347. Durand Ruel, New York lent the painting to an exhibition at the Duveen Galleries in New York in November 1941."
     },
     "artist": {
       "name": "Pierre Auguste Renoir",
@@ -8521,16 +8738,10 @@
       },
       {
         "name": "Durand-Ruel",
-        "earliest_possible": "1841-01-01",
+        "earliest_possible": "1900-01-01",
         "latest_possible": "1905-07-05",
         "earliest_definite": "1900-12-31",
-        "latest_definite": "1905-07-05",
-        "location": {
-          "lat": 48.85341,
-          "lng": 2.3488,
-          "name": "Paris",
-          "geonameId": 2988507
-        }
+        "latest_definite": "1905-07-05"
       },
       {
         "name": "Bernheim-Jeune",
@@ -8620,15 +8831,22 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1965-10-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1965-10-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1965-10-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1965-10-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1011947_bathers-with-crab.jpg"
@@ -8910,8 +9128,8 @@
           "primary_owner": true,
           "earliest_possible": 2439461,
           "earliest_definite": 2439491,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 6,
           "acquisition_timestring": "December 1966",
           "deacquisition_timestring": "",
@@ -9046,9 +9264,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1966-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1966-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -9067,7 +9285,7 @@
     "accession_number": "65.31",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=19635",
     "creation_date": "1872-01-01",
-    "provenance": "Camille Pissarro [1830-1903], France. Alfred Nunès, the artist's cousin, Paris, France, until sometime in or before 1894 [1]; Estate of Alfred Nunès, Paris, France, until April 1894; (sold at Hotel Drouot, Paris, France, on April 16, 1894, no. 39) [2]; Pierre Durand-Ruel, Paris, France [3]; Philippe Durand-Ruel, Paris, France [3]; sold to Wildenstein & Co., Inc., New York, NY on February 20, 1964; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965.   NOTES:  [1]. Since the 1894 sale refers to \"Succession de M.A.N.\"(unes), Nunès died in or before 1894.  [2]. Sold for 900 francs.  In Pissarro: \"Critical Catalogue of Paintings\" by Joachim Pissarro and Claire Durand-Ruel Snollaerts, vol. 2, 2005, the buyer at the Nunès sale is given as Durand-Ruel; however, neither of the individual Durand-Ruel collections are mentioned (see note below).   [3]. Provenance given by Wildenstein at the time of purchase; see curatorial file.",
+    "provenance": "Camille Pissarro [1830-1903], France. Alfred Nunès, the artist's cousin, Paris, France, until sometime in or before 1894 [1]; Estate of Alfred Nunès, Paris, France, until April 1894; (sold at Hotel Drouot, Paris, France, on April 16, 1894, no. 39) [2]; Pierre Durand-Ruel, Paris, France [3]; Philippe Durand-Ruel, Paris, France [3]; sold to Wildenstein & Co., Inc., New York, NY on February 20, 1964; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965.   Notes:  [1]. Since the 1894 sale refers to \"Succession de M.A.N.\"(unes), Nunès died in or before 1894.  [2]. Sold for 900 francs.  In Pissarro: \"Critical Catalogue of Paintings\" by Joachim Pissarro and Claire Durand-Ruel Snollaerts, vol. 2, 2005, the buyer at the Nunès sale is given as Durand-Ruel; however, neither of the individual Durand-Ruel collections are mentioned (see note below).   [3]. Provenance given by Wildenstein at the time of purchase; see curatorial file.",
     "generated_provenance": {
       "period": [
         {
@@ -9369,21 +9587,60 @@
           "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965",
           "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2439035,
           "earliest_definite": 2439065,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2439065,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "October 1965",
           "deacquisition_timestring": "",
           "timestring": "October 1965"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439065,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 8,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Camille Pissarro [1830-1903], France. Alfred Nunès, the artist's cousin, Paris, France, until sometime in or, by 1894 [1]; Estate of Alfred Nunès, Paris, France, until April 1894; (sold at Hotel Drouot, Paris, France, on April 16, 1894, no. 39) [2]; Pierre Durand-Ruel, Paris, France [3]; Philippe Durand-Ruel, Paris, France [4]; sold to Wildenstein & Co., Inc., New York, NY, on February 20, 1964; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965. NOTES: [1] . Since the 1894 sale refers to \"Succession de M.A.N.\"(unes), Nunès died in or before 1894. [2] . Sold for 900 francs.  In Pissarro: \"Critical Catalogue of Paintings\" by Joachim Pissarro and Claire Durand-Ruel Snollaerts, vol. 2, 2005, the buyer at the Nunès sale is given as Durand-Ruel; however, neither of the individual Durand-Ruel collections are mentioned (see note below). [3] . Provenance given by Wildenstein at the time of purchase; see curatorial file. [4] . Provenance given by Wildenstein at the time of purchase; see curatorial file."
+      "provenance": "Camille Pissarro [1830-1903], France. Alfred Nunès, the artist's cousin, Paris, France, until sometime in or, by 1894 [1]; Estate of Alfred Nunès, Paris, France, until April 1894; (sold at Hotel Drouot, Paris, France, on April 16, 1894, no. 39) [2]; Pierre Durand-Ruel, Paris, France [3]; Philippe Durand-Ruel, Paris, France [4]; sold to Wildenstein & Co., Inc., New York, NY, on February 20, 1964; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, October 1965. Notes:. NOTES: [1] . Since the 1894 sale refers to \"Succession de M.A.N.\"(unes), Nunès died in or before 1894. [2] . Sold for 900 francs.  In Pissarro: \"Critical Catalogue of Paintings\" by Joachim Pissarro and Claire Durand-Ruel Snollaerts, vol. 2, 2005, the buyer at the Nunès sale is given as Durand-Ruel; however, neither of the individual Durand-Ruel collections are mentioned (see note below). [3] . Provenance given by Wildenstein at the time of purchase; see curatorial file. [4] . Provenance given by Wildenstein at the time of purchase; see curatorial file."
     },
     "artist": {
       "name": "Camille Pissarro",
@@ -9514,6 +9771,7 @@
         ]
       },
       {
+        
         "title": "Exposition Camille Pissarro",
         "venues": [
           {
@@ -9684,15 +9942,22 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1965-10-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1965-10-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1965-10-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1965-10-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1011949_street-in-pontoise-rue-de-beaujour-pontoise.jpg"
@@ -9896,8 +10161,8 @@
           "primary_owner": true,
           "earliest_possible": 2439217,
           "earliest_definite": 2439246,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 4,
           "acquisition_timestring": "April 1966",
           "deacquisition_timestring": "",
@@ -10022,9 +10287,9 @@
       {
         "name": "Museum of Art, Carnegie Institute",
         "earliest_possible": "1966-04-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1966-04-30",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -10036,563 +10301,6 @@
     "downloaded_image": "gallery_8/1012265_rocks-at-the-seashore-rochers-au-bord-de-la-mer.jpg"
   },
   {
-    "id": 1012527,
-    "category": "paintings",
-    "medium": "oil on canvas",
-    "title": "The Road to Louveciennes (La route de Louveciennes)",
-    "accession_number": "69.11",
-    "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=103537",
-    "creation_date": "1874-01-01",
-    "provenance": "Alfred Sisley [1839-1899], France. L. Dubois, Bordeaux, France [1]; Bernheim-Jeune, Paris, France; Percy Moore Turner [1905-1952], London, England, by September 1930 until at least January 1932 [2]; Paul Rosenberg [1881-1959], Paris, France, until 1934; purchased by Paul Gadala, Paris, France, 1934 until at least May 1939 [3]; Wildenstein & Company, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, April 1969 [4].  NOTES:1. Early provenance based on information from Wildenstein and from Francois Daulte, \"Alfred Sisley: Catalogue raisonné de l'oeuvre peint\", Durand-Ruel, Paris,1959, no. 129 2. Turner lent it to the exhibitions \"Vincent van Gogh en zijn tijdgenooten\", Amsterdam September 6-November 2, 1930 and \"Exhibition of French Art\", Royal Academy, London, January 4-March 12, 1932 3. Paul Gadala lent it to two exhibitions at Paul Rosenberg's Paris gallery, \"Exposition Le Grand Siècle\", June 15-July 11, 1936 and \"Exposition Silsley\", May 9-June 10, 1939. 4. Updated by CGK July 2014.",
-    "generated_provenance": {
-      "period": [
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "Alfred Sisley",
-          "party_certainty": true,
-          "birth": 2392741,
-          "birth_certainty": true,
-          "death": 2415020,
-          "death_certainty": true,
-          "location": "France",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": null,
-          "eotb": null,
-          "eotb_certainty": null,
-          "eotb_precision": null,
-          "bote": null,
-          "bote_certainty": null,
-          "bote_precision": null,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": null,
-          "original_text": "Alfred Sisley [1839-1899], France",
-          "provenance": "Alfred Sisley [1839-1899], France",
-          "parsable": true,
-          "direct_transfer": false,
-          "stock_number": null,
-          "footnote": "",
-          "primary_owner": true,
-          "earliest_possible": 2392741,
-          "earliest_definite": null,
-          "latest_definite": null,
-          "latest_possible": 2415020,
-          "order": 0,
-          "acquisition_timestring": "",
-          "deacquisition_timestring": "",
-          "timestring": null
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "L. Dubois",
-          "party_certainty": true,
-          "birth": null,
-          "birth_certainty": null,
-          "death": null,
-          "death_certainty": null,
-          "location": "Bordeaux, France",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": null,
-          "eotb": null,
-          "eotb_certainty": null,
-          "eotb_precision": null,
-          "bote": null,
-          "bote_certainty": null,
-          "bote_precision": null,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": null,
-          "original_text": "L. Dubois, Bordeaux, France",
-          "provenance": "L. Dubois, Bordeaux, France",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "Early provenance based on information from Wildenstein and from Francois Daulte, \"Alfred Sisley: Catalogue raisonné de l'oeuvre peint\", Durand-Ruel, Paris,1959, no. 129",
-          "primary_owner": true,
-          "earliest_possible": 2392741,
-          "earliest_definite": null,
-          "latest_definite": null,
-          "latest_possible": 2426250,
-          "order": 1,
-          "acquisition_timestring": "",
-          "deacquisition_timestring": "",
-          "timestring": null
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "Bernheim-Jeune",
-          "party_certainty": true,
-          "birth": null,
-          "birth_certainty": null,
-          "death": null,
-          "death_certainty": null,
-          "location": "Paris, France",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": null,
-          "eotb": null,
-          "eotb_certainty": null,
-          "eotb_precision": null,
-          "bote": null,
-          "bote_certainty": null,
-          "bote_precision": null,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": null,
-          "original_text": "Bernheim-Jeune, Paris, France",
-          "provenance": "Bernheim-Jeune, Paris, France",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "",
-          "primary_owner": true,
-          "earliest_possible": 2392741,
-          "earliest_definite": null,
-          "latest_definite": null,
-          "latest_possible": 2426250,
-          "order": 2,
-          "acquisition_timestring": "",
-          "deacquisition_timestring": "",
-          "timestring": null
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "Percy Moore Turner",
-          "party_certainty": true,
-          "birth": 2416847,
-          "birth_certainty": true,
-          "death": 2434378,
-          "death_certainty": true,
-          "location": "London, England",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": 0,
-          "eotb": 2426250,
-          "eotb_certainty": true,
-          "eotb_precision": 2,
-          "bote": 2426708,
-          "bote_certainty": true,
-          "bote_precision": 2,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": 0,
-          "original_text": "Percy Moore Turner [1905-1952], London, England, by September 1930 until at least January 1932",
-          "provenance": "Percy Moore Turner [1905-1952], London, England, by September 1930 until at least January 1932",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "Turner lent it to the exhibitions \"Vincent van Gogh en zijn tijdgenooten\", Amsterdam September 6-November 2, 1930 and \"Exhibition of French Art\", Royal Academy, London, January 4-March 12, 1932",
-          "primary_owner": true,
-          "earliest_possible": 2416847,
-          "earliest_definite": 2426250,
-          "latest_definite": 2426708,
-          "latest_possible": 2427439,
-          "order": 3,
-          "acquisition_timestring": "by September 1930",
-          "deacquisition_timestring": "after January 1932",
-          "timestring": "by September 1930 until at least January 1932"
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "Paul Rosenberg",
-          "party_certainty": true,
-          "birth": 2408082,
-          "birth_certainty": true,
-          "death": 2436934,
-          "death_certainty": true,
-          "location": "Paris, France",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": null,
-          "eotb": null,
-          "eotb_certainty": null,
-          "eotb_precision": null,
-          "bote": 2427439,
-          "bote_certainty": true,
-          "bote_precision": 1,
-          "eote": 2427803,
-          "eote_certainty": true,
-          "eote_precision": 1,
-          "original_text": "Paul Rosenberg [1881-1959], Paris, France, until 1934",
-          "provenance": "Paul Rosenberg [1881-1959], Paris, France, until 1934",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "",
-          "primary_owner": true,
-          "earliest_possible": 2426708,
-          "earliest_definite": 2427439,
-          "latest_definite": 2427439,
-          "latest_possible": 2427803,
-          "order": 4,
-          "acquisition_timestring": "",
-          "deacquisition_timestring": "1934",
-          "timestring": "until 1934"
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": "Purchase",
-          "party": "Paul Gadala",
-          "party_certainty": true,
-          "birth": null,
-          "birth_certainty": null,
-          "death": null,
-          "death_certainty": null,
-          "location": "Paris, France",
-          "location_certainty": true,
-          "botb": 2427439,
-          "botb_certainty": true,
-          "botb_precision": 1,
-          "eotb": 2427803,
-          "eotb_certainty": true,
-          "eotb_precision": 1,
-          "bote": 2429385,
-          "bote_certainty": true,
-          "bote_precision": 2,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": 0,
-          "original_text": "purchased by Paul Gadala, Paris, France, 1934 until at least May 1939",
-          "provenance": "purchased by Paul Gadala, Paris, France, 1934 until at least May 1939",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "Paul Gadala lent it to two exhibitions at Paul Rosenberg's Paris gallery, \"Exposition Le Grand Siècle\", June 15-July 11, 1936 and \"Exposition Silsley\", May 9-June 10, 1939.",
-          "primary_owner": true,
-          "earliest_possible": 2427439,
-          "earliest_definite": 2427803,
-          "latest_definite": 2429385,
-          "latest_possible": 2440342,
-          "order": 5,
-          "acquisition_timestring": "1934",
-          "deacquisition_timestring": "after May 1939",
-          "timestring": "1934 until at least May 1939"
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": null,
-          "party": "Wildenstein & Company, Inc.",
-          "party_certainty": true,
-          "birth": null,
-          "birth_certainty": null,
-          "death": null,
-          "death_certainty": null,
-          "location": "New York, NY",
-          "location_certainty": true,
-          "botb": null,
-          "botb_certainty": null,
-          "botb_precision": null,
-          "eotb": null,
-          "eotb_certainty": null,
-          "eotb_precision": null,
-          "bote": null,
-          "bote_certainty": null,
-          "bote_precision": null,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": null,
-          "original_text": "Wildenstein & Company, Inc., New York, NY",
-          "provenance": "Wildenstein & Company, Inc., New York, NY",
-          "parsable": true,
-          "direct_transfer": true,
-          "stock_number": null,
-          "footnote": "",
-          "primary_owner": true,
-          "earliest_possible": 2429385,
-          "earliest_definite": null,
-          "latest_definite": 2440313,
-          "latest_possible": 2440342,
-          "order": 6,
-          "acquisition_timestring": "",
-          "deacquisition_timestring": "",
-          "timestring": null
-        },
-        {
-          "period_certainty": true,
-          "acquisition_method": "Purchase",
-          "party": "Museum of Art, Carnegie Institute",
-          "party_certainty": true,
-          "birth": null,
-          "birth_certainty": null,
-          "death": null,
-          "death_certainty": null,
-          "location": "Pittsburgh, PA",
-          "location_certainty": true,
-          "botb": 2440313,
-          "botb_certainty": true,
-          "botb_precision": 2,
-          "eotb": 2440342,
-          "eotb_certainty": true,
-          "eotb_precision": 2,
-          "bote": null,
-          "bote_certainty": null,
-          "bote_precision": null,
-          "eote": null,
-          "eote_certainty": null,
-          "eote_precision": null,
-          "original_text": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, April 1969",
-          "provenance": "purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, April 1969",
-          "parsable": true,
-          "direct_transfer": null,
-          "stock_number": null,
-          "footnote": "Updated by CGK July 2014.",
-          "primary_owner": true,
-          "earliest_possible": 2440313,
-          "earliest_definite": 2440342,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
-          "order": 7,
-          "acquisition_timestring": "April 1969",
-          "deacquisition_timestring": "",
-          "timestring": "April 1969"
-        }
-      ],
-      "provenance": "Alfred Sisley [1839-1899], France. L. Dubois, Bordeaux, France [1]; Bernheim-Jeune, Paris, France; Percy Moore Turner [1905-1952], London, England, by September 1930 until at least January 1932 [2]; Paul Rosenberg [1881-1959], Paris, France, until 1934; purchased by Paul Gadala, Paris, France, 1934 until at least May 1939 [3]; Wildenstein & Company, Inc., New York, NY; purchased by Museum of Art, Carnegie Institute, Pittsburgh, PA, April 1969 [4]. NOTES: [1] Early provenance based on information from Wildenstein and from Francois Daulte, \"Alfred Sisley: Catalogue raisonné de l'oeuvre peint\", Durand-Ruel, Paris,1959, no. 129 [2] Turner lent it to the exhibitions \"Vincent van Gogh en zijn tijdgenooten\", Amsterdam September 6-November 2, 1930 and \"Exhibition of French Art\", Royal Academy, London, January 4-March 12, 1932 [3] Paul Gadala lent it to two exhibitions at Paul Rosenberg's Paris gallery, \"Exposition Le Grand Siècle\", June 15-July 11, 1936 and \"Exposition Silsley\", May 9-June 10, 1939. [4] Updated by CGK July 2014."
-    },
-    "artist": {
-      "name": "Alfred Sisley",
-      "location": {
-        "lat": 48.86115,
-        "lng": 2.11463,
-        "name": "Louveciennes",
-        "geonameId": 2997351
-      }
-    },
-    "events": [
-      {
-        "title": "Exhibition of French Art",
-        "venues": [
-          {
-            "name": "Manchester City Art Gallery",
-            "earliest": "1932-03-22",
-            "latest": "1932-05-01",
-            "location": {
-              "lat": 53.48095,
-              "lng": -2.23743,
-              "name": "Manchester",
-              "geonameId": 2643123
-            }
-          }
-        ]
-      },
-      {
-        "title": "Vincent Van Gogh en zijn tijdgenooten (Vincent Van Gogh and his Contemporaries)",
-        "venues": [
-          {
-            "name": "Stedelijk Museum, Amsterdam",
-            "earliest": "1930-09-06",
-            "latest": "1930-11-02",
-            "location": {
-              "lat": 52.37403,
-              "lng": 4.88969,
-              "name": "Amsterdam",
-              "geonameId": 2759794
-            }
-          }
-        ]
-      },
-      {
-        "title": "Le Grand Siècle",
-        "venues": [
-          {
-            "name": "Galerie Paul Rosenberg",
-            "earliest": "1936-06-15",
-            "latest": "1936-07-11",
-            "location": {
-              "lat": 48.85341,
-              "lng": 2.3488,
-              "name": "Paris",
-              "geonameId": 2988507
-            }
-          }
-        ]
-      },
-      {
-        "title": "Exposition Sisley",
-        "venues": [
-          {
-            "name": "Galerie Paul Rosenberg",
-            "earliest": "1939-05-09",
-            "latest": "1939-06-10",
-            "location": {
-              "lat": 48.85341,
-              "lng": 2.3488,
-              "name": "Paris",
-              "geonameId": 2988507
-            }
-          }
-        ]
-      },
-      {
-        "title": "Exhibition of French Art: 1200-1900",
-        "venues": [
-          {
-            "name": "Royal Academy of Arts",
-            "earliest": "1932-01-04",
-            "latest": "1932-03-12",
-            "location": {
-              "lat": 51.50853,
-              "lng": -0.12574,
-              "name": "London",
-              "geonameId": 2643743
-            }
-          }
-        ]
-      },
-      {
-        "title": "Twelve Years of Collecting",
-        "venues": [
-          {
-            "name": "Wildenstein and Co., Inc.",
-            "earliest": "1973-11-07",
-            "latest": "1973-12-15",
-            "location": {
-              "lat": 40.71427,
-              "lng": -74.00597,
-              "name": "New York",
-              "geonameId": 5128581
-            }
-          }
-        ]
-      },
-      {
-        "title": "A French Way of Seeing",
-        "venues": [
-          {
-            "name": "High Museum of Art, Atlanta",
-            "earliest": "1974-01-04",
-            "latest": "1974-01-27",
-            "location": {
-              "lat": 33.749,
-              "lng": -84.38798,
-              "name": "Atlanta",
-              "geonameId": 4180439
-            }
-          }
-        ]
-      }
-    ],
-    "owners": [
-      {
-        "name": "Alfred Sisley",
-        "earliest_possible": "1839-01-01",
-        "latest_possible": "1899-12-31",
-        "earliest_definite": null,
-        "latest_definite": null,
-        "location": {
-          "lat": 46.0,
-          "lng": 2.0,
-          "name": "France",
-          "geonameId": 3017382
-        }
-      },
-      {
-        "name": "L. Dubois",
-        "earliest_possible": "1839-01-01",
-        "latest_possible": "1930-09-30",
-        "earliest_definite": null,
-        "latest_definite": null,
-        "location": {
-          "lat": 44.84044,
-          "lng": -0.5805,
-          "name": "Bordeaux",
-          "geonameId": 3031582
-        }
-      },
-      {
-        "name": "Bernheim-Jeune",
-        "earliest_possible": "1839-01-01",
-        "latest_possible": "1930-09-30",
-        "earliest_definite": null,
-        "latest_definite": null,
-        "location": {
-          "lat": 48.85341,
-          "lng": 2.3488,
-          "name": "Paris",
-          "geonameId": 2988507
-        }
-      },
-      {
-        "name": "Percy Moore Turner",
-        "earliest_possible": "1905-01-01",
-        "latest_possible": "1934-01-01",
-        "earliest_definite": "1930-09-30",
-        "latest_definite": "1932-01-01",
-        "location": {
-          "lat": 51.50853,
-          "lng": -0.12574,
-          "name": "London",
-          "geonameId": 2643743
-        }
-      },
-      {
-        "name": "Paul Rosenberg",
-        "earliest_possible": "1932-01-01",
-        "latest_possible": "1934-12-31",
-        "earliest_definite": "1934-01-01",
-        "latest_definite": "1934-01-01",
-        "location": {
-          "lat": 48.85341,
-          "lng": 2.3488,
-          "name": "Paris",
-          "geonameId": 2988507
-        }
-      },
-      {
-        "name": "Paul Gadala",
-        "earliest_possible": "1934-01-01",
-        "latest_possible": "1969-04-30",
-        "earliest_definite": "1934-12-31",
-        "latest_definite": "1939-05-01",
-        "location": {
-          "lat": 48.85341,
-          "lng": 2.3488,
-          "name": "Paris",
-          "geonameId": 2988507
-        }
-      },
-      {
-        "name": "Wildenstein & Company, Inc.",
-        "earliest_possible": "1939-05-01",
-        "latest_possible": "1969-04-30",
-        "earliest_definite": null,
-        "latest_definite": "1969-04-01",
-        "location": {
-          "lat": 40.71427,
-          "lng": -74.00597,
-          "name": "New York",
-          "geonameId": 5128581
-        }
-      },
-      {
-        "name": "Museum of Art, Carnegie Institute",
-        "earliest_possible": "1969-04-01",
-        "latest_possible": "2015-08-13",
-        "earliest_definite": "1969-04-30",
-        "latest_definite": "2015-08-13",
-        "location": {
-          "lat": 40.44062,
-          "lng": -79.99589,
-          "name": "Pittsburgh",
-          "geonameId": 5206379
-        }
-      }
-    ],
-    "downloaded_image": "gallery_8/1012527_the-road-to-louveciennes-la-route-de-louveciennes.jpg"
-  },
-  {
     "id": 1011565,
     "category": "paintings",
     "medium": "oil on paper board mounted to cradled mahogany panel",
@@ -10600,7 +10308,7 @@
     "accession_number": "62.32",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=19246",
     "creation_date": "1902-01-01",
-    "provenance": "Edouard Vuillard [1868-1940], until 1902; purchased by Bernheim-Jeune, Paris, France, October 11, 1902 (stock no. 12704) [1]; sold to Romaine Brooks [1874-1970], Paris, France, April 28, 1905 [2]; Romaine Brooks Collection. Wildenstein & Co., Inc., New York, NY, by October 1962; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962.   NOTES:  [1]. Purchase price 600 francs. [2]. Purchase price 1500 francs. Early provenance from \"Vuillard, The Inexhaustible Glance\", by Antoine Salomon and Guy Cogeval, vol. 2, Skira, 2003, p. 862.",
+    "provenance": "Edouard Vuillard [1868-1940], until 1902; purchased by Bernheim-Jeune, Paris, France, October 11, 1902 (stock no. 12704) [1]; sold to Romaine Brooks [1874-1970], Paris, France, April 28, 1905 [2]; Romaine Brooks Collection. Wildenstein & Co., Inc., New York, NY, by October 1962; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962.   Notes:  [1]. Purchase price 600 francs. [2]. Purchase price 1500 francs. Early provenance from \"Vuillard, The Inexhaustible Glance\", by Antoine Salomon and Guy Cogeval, vol. 2, Skira, 2003, p. 862.",
     "generated_provenance": {
       "period": [
         {
@@ -10824,21 +10532,60 @@
           "original_text": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962",
           "provenance": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2437939,
           "earliest_definite": 2437969,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2437969,
+          "latest_possible": 2457268,
           "order": 5,
           "acquisition_timestring": "October 1962",
           "deacquisition_timestring": "",
           "timestring": "October 1962"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2437969,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 6,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Edouard Vuillard [1868-1940], until 1902; purchased by Bernheim-Jeune, Paris, France, October 11, 1902, stock no. 12704) [1]; sold to Romaine Brooks [1874-1970], Paris, France, April 28, 1905 [2]; Romaine Brooks Collection. Wildenstein & Co., Inc., New York, NY, by October 1962; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962. NOTES: [1] . Purchase price 600 francs. [2] . Purchase price 1500 francs. Early provenance from \"Vuillard, The Inexhaustible Glance\", by Antoine Salomon and Guy Cogeval, vol. 2, Skira, 2003, p. 862."
+      "provenance": "Edouard Vuillard [1868-1940], until 1902; purchased by Bernheim-Jeune, Paris, France, October 11, 1902, stock no. 12704) [1]; sold to Romaine Brooks [1874-1970], Paris, France, April 28, 1905 [2]; Romaine Brooks Collection. Wildenstein & Co., Inc., New York, NY, by October 1962; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, October 1962. Notes:. NOTES: [1] . Purchase price 600 francs. [2] . Purchase price 1500 francs. Early provenance from \"Vuillard, The Inexhaustible Glance\", by Antoine Salomon and Guy Cogeval, vol. 2, Skira, 2003, p. 862."
     },
     "artist": {
       "name": "Edouard Vuillard",
@@ -10978,15 +10725,22 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1962-10-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1962-10-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1962-10-31",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
           "name": "Pittsburgh",
           "geonameId": 5206379
         }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1962-10-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1011565_interior-with-women.jpg"
@@ -10999,7 +10753,7 @@
     "accession_number": "62.37.2",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=146595",
     "creation_date": "1895-01-01",
-    "provenance": "Pierre Auguste Renoir [1841-1919], France. Josse and Gaston Bernheim-Jeune, Paris, France, by 1913 [1]; purchased by Galerie Bernheim-Jeune, Paris, France, on November 12, 1927 (stock no. 25082, photograph no. 6607) [2]; purchased by Gordon C. Edwards, Ottawa, Canada, May 25, 1928; Durand-Ruel Family collection, Paris, France; possibly Galerie Durand-Ruel, Paris, France (no. 5756, photograph A 2003) [3]; Sam Salz (1894-1981), Inc., New York, NY; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962.   NOTES: [1]. Possibly bought in1896; see correspondence from Sam Salz in curatorial file.  [2]. Purchased for 250,000 Francs. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2340. [3]. See curatorial file.",
+    "provenance": "Pierre Auguste Renoir [1841-1919], France. Josse and Gaston Bernheim-Jeune, Paris, France, by 1913 [1]; purchased by Galerie Bernheim-Jeune, Paris, France, on November 12, 1927 (stock no. 25082, photograph no. 6607) [2]; purchased by Gordon C. Edwards, Ottawa, Canada, May 25, 1928; Durand-Ruel Family collection, Paris, France; possibly Galerie Durand-Ruel, Paris, France (no. 5756, photograph A 2003) [3]; Sam Salz (1894-1981), Inc., New York, NY; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962.   Notes: [1]. Possibly bought in1896; see correspondence from Sam Salz in curatorial file.  [2]. Purchased for 250,000 Francs. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2340. [3]. See curatorial file.",
     "generated_provenance": {
       "period": [
         {
@@ -11301,21 +11055,60 @@
           "original_text": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962",
           "provenance": "purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962",
           "parsable": true,
-          "direct_transfer": null,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2438000,
           "earliest_definite": 2438030,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2438030,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "December 1962",
           "deacquisition_timestring": "",
           "timestring": "December 1962"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2438030,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 8,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Pierre Auguste Renoir [1841-1919], France. Josse and Gaston Bernheim-Jeune, Paris, France, by 1913 [1]; purchased by Galerie Bernheim-Jeune, Paris, France, on November 12, 1927, stock no. 25082, photograph no. 6607) [2]; purchased by Gordon C. Edwards, Ottawa, Canada, May 25, 1928; Durand-Ruel Family collection, Paris, France; Possibly Galerie Durand-Ruel, Paris, France, no. 5756, photograph A 2003) [3]; Sam Salz, Inc. [1894-1981], New York, NY; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962. NOTES: [1] . Possibly bought in1896; see correspondence from Sam Salz in curatorial file. [2] . Purchased for 250,000 Francs. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2340. [3] . See curatorial file."
+      "provenance": "Pierre Auguste Renoir [1841-1919], France. Josse and Gaston Bernheim-Jeune, Paris, France, by 1913 [1]; purchased by Galerie Bernheim-Jeune, Paris, France, on November 12, 1927, stock no. 25082, photograph no. 6607) [2]; purchased by Gordon C. Edwards, Ottawa, Canada, May 25, 1928; Durand-Ruel Family collection, Paris, France; Possibly Galerie Durand-Ruel, Paris, France, no. 5756, photograph A 2003) [3]; Sam Salz, Inc. [1894-1981], New York, NY; purchased by Department of Fine Arts, Carnegie Institute, Pittsburgh, PA, December 1962. Notes:. NOTES: [1] . Possibly bought in1896; see correspondence from Sam Salz in curatorial file. [2] . Purchased for 250,000 Francs. See also \"Renoir: Catalogue raisonné des tableaux, pastels, dessins et aquarelles\" by Guy-Patrice et Michel Dauberville avec la collaboration de Camille Fremontier-Murphy, volume 3, no. 2340. [3] . See curatorial file."
     },
     "artist": {
       "name": "Pierre Auguste Renoir",
@@ -11487,9 +11280,339 @@
       {
         "name": "Department of Fine Arts, Carnegie Institute",
         "earliest_possible": "1962-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1962-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "1962-12-31",
+        "location": {
+          "lat": 40.44062,
+          "lng": -79.99589,
+          "name": "Pittsburgh",
+          "geonameId": 5206379
+        }
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1962-12-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
+      }
+    ],
+    "downloaded_image": "gallery_8/1011577_young-girl-in-pink-petite-fille-en-rose.jpg"
+  },
+  {
+    "id": 1007824,
+    "category": "paintings",
+    "medium": "oil on canvas",
+    "title": "Flowers in Green Vase",
+    "accession_number": "46.21",
+    "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=113225",
+    "creation_date": "1900-01-01",
+    "provenance": "Odilon Redon [1840-1916]. Dr. Beram D. Saklatwalla, by 1931; Dr. and Mrs. Beram D. Saklatwalla, until 1944; Mrs. Beram D. Saklatwalla, 1944 until 1946 [1]; gift to Museum, June 1946.   NOTES: [1].  Ann Richards Saklatwalla.",
+    "generated_provenance": {
+      "period": [
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Odilon Redon",
+          "party_certainty": true,
+          "birth": 2393106,
+          "birth_certainty": true,
+          "death": 2421229,
+          "death_certainty": true,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Odilon Redon [1840-1916]",
+          "provenance": "Odilon Redon [1840-1916]",
+          "parsable": true,
+          "direct_transfer": false,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2393106,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2421229,
+          "order": 0,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Dr. Beram D. Saklatwalla",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": 0,
+          "eotb": 2426707,
+          "eotb_certainty": true,
+          "eotb_precision": 1,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Dr. Beram D. Saklatwalla, by 1931",
+          "provenance": "Dr. Beram D. Saklatwalla, by 1931",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2393106,
+          "earliest_definite": 2426707,
+          "latest_definite": 2426707,
+          "latest_possible": 2431091,
+          "order": 1,
+          "acquisition_timestring": "by 1931",
+          "deacquisition_timestring": "",
+          "timestring": "by 1931"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Dr. and Mrs. Beram D. Saklatwalla",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": 2431091,
+          "bote_certainty": true,
+          "bote_precision": 1,
+          "eote": 2431456,
+          "eote_certainty": true,
+          "eote_precision": 1,
+          "original_text": "Dr. and Mrs. Beram D. Saklatwalla, until 1944",
+          "provenance": "Dr. and Mrs. Beram D. Saklatwalla, until 1944",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2426707,
+          "earliest_definite": 2431091,
+          "latest_definite": 2431091,
+          "latest_possible": 2431456,
+          "order": 2,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "1944",
+          "timestring": "until 1944"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Mrs. Beram D. Saklatwalla",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": 2431091,
+          "botb_certainty": true,
+          "botb_precision": 1,
+          "eotb": 2431456,
+          "eotb_certainty": true,
+          "eotb_precision": 1,
+          "bote": 2431822,
+          "bote_certainty": true,
+          "bote_precision": 1,
+          "eote": 2432186,
+          "eote_certainty": true,
+          "eote_precision": 1,
+          "original_text": "Mrs. Beram D. Saklatwalla, 1944 until 1946",
+          "provenance": "Mrs. Beram D. Saklatwalla, 1944 until 1946",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": ".  Ann Richards Saklatwalla.",
+          "primary_owner": true,
+          "earliest_possible": 2431091,
+          "earliest_definite": 2431456,
+          "latest_definite": 2431822,
+          "latest_possible": 2432186,
+          "order": 3,
+          "acquisition_timestring": "1944",
+          "deacquisition_timestring": "1946",
+          "timestring": "1944 until 1946"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": "Gift",
+          "party": "Carnegie Museum of Art",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "Pittsburgh, PA",
+          "location_certainty": true,
+          "botb": 2431973,
+          "botb_certainty": true,
+          "botb_precision": 2,
+          "eotb": 2432002,
+          "eotb_certainty": true,
+          "eotb_precision": 2,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "gift to Museum, June 1946",
+          "provenance": "gift to Carnegie Museum of Art, Pittsburgh, PA, June 1946",
+          "parsable": false,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2431973,
+          "earliest_definite": 2432002,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
+          "order": 4,
+          "acquisition_timestring": "June 1946",
+          "deacquisition_timestring": "",
+          "timestring": "June 1946"
+        }
+      ],
+      "provenance": "Odilon Redon [1840-1916]. Dr. Beram D. Saklatwalla, by 1931; Dr. and Mrs. Beram D. Saklatwalla, until 1944; Mrs. Beram D. Saklatwalla, 1944 until 1946 [1]; gift to Carnegie Museum of Art, Pittsburgh, PA, June 1946. NOTES: [1] .  Ann Richards Saklatwalla."
+    },
+    "artist": {
+      "name": "Odilon Redon"
+    },
+    "events": [
+      {
+        "title": "Toulouse-Lautrec and Redon Exhibition",
+        "venues": [
+          {
+            "name": "Museum of Modern Art",
+            "earliest": "1931-02-01",
+            "latest": "1931-03-02",
+            "location": {
+              "lat": 40.71427,
+              "lng": -74.00597,
+              "name": "New York",
+              "geonameId": 5128581
+            }
+          }
+        ]
+      },
+      {
+        "title": "Odilon Redon",
+        "venues": [
+          {
+            "name": "Acquavella Galleries Inc.",
+            "earliest": "1970-10-22",
+            "latest": "1970-11-21",
+            "location": {
+              "lat": 40.71427,
+              "lng": -74.00597,
+              "name": "New York",
+              "geonameId": 5128581
+            }
+          }
+        ]
+      },
+      {
+        "title": "Four Centuries of Still-Life Painting",
+        "venues": [
+          {
+            "name": "Allentown Art Museum",
+            "earliest": "1959-12-12",
+            "latest": "1960-02-10",
+            "location": {
+              "lat": 40.60843,
+              "lng": -75.49018,
+              "name": "Allentown",
+              "geonameId": 5178127
+            }
+          }
+        ]
+      },
+      {
+        "title": "Odilon Redon 1840-1916",
+        "venues": [
+          {
+            "name": "Galerie des Beaux-Arts de Bordeaux",
+            "earliest": "1985-05-10",
+            "latest": "1985-09-01",
+            "location": {
+              "lat": 44.84044,
+              "lng": -0.5805,
+              "name": "Bordeaux",
+              "geonameId": 3031582
+            }
+          }
+        ]
+      }
+    ],
+    "owners": [
+      {
+        "name": "Odilon Redon",
+        "earliest_possible": "1840-01-01",
+        "latest_possible": "1916-12-31",
+        "earliest_definite": null,
+        "latest_definite": null
+      },
+      {
+        "name": "Dr. Beram D. Saklatwalla",
+        "earliest_possible": "1840-01-01",
+        "latest_possible": "1944-01-01",
+        "earliest_definite": "1931-12-31",
+        "latest_definite": "1931-12-31"
+      },
+      {
+        "name": "Dr. and Mrs. Beram D. Saklatwalla",
+        "earliest_possible": "1931-12-31",
+        "latest_possible": "1944-12-31",
+        "earliest_definite": "1944-01-01",
+        "latest_definite": "1944-01-01"
+      },
+      {
+        "name": "Mrs. Beram D. Saklatwalla",
+        "earliest_possible": "1944-01-01",
+        "latest_possible": "1946-12-31",
+        "earliest_definite": "1944-12-31",
+        "latest_definite": "1946-01-01"
+      },
+      {
+        "name": "Carnegie Museum of Art",
+        "earliest_possible": "1946-06-01",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": "1946-06-30",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -11498,7 +11621,7 @@
         }
       }
     ],
-    "downloaded_image": "gallery_8/1011577_young-girl-in-pink-petite-fille-en-rose.jpg"
+    "downloaded_image": "gallery_8/1007824_flowers-in-green-vase.jpg"
   },
   {
     "id": 1012263,
@@ -11508,7 +11631,7 @@
     "accession_number": "66.24.2",
     "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=132412",
     "creation_date": "1893-01-01",
-    "provenance": "Paul Signac [1863-1935]; Atelier Paul Signac, 1893 until 1924; Marcel Kapferer, Paris, France, 1924. Raphaël Gérard, Paris, France, March 26, 1931 until at least December 1933 [1]. E. Raudag?, Glasgow, Scotland, by 1940 [2]. Alex Reid & Lefèvre, London, England, 1966; Sam Salz, Inc., New York, NY; purchased by Museum, December 1966.   NOTES: [1]. Exhibited in \"Seurat et ses Amis\", Paris, December 1933-January 1934.  [2]. This name might also be \"Randag\". See Signac catalogue raisonné by Françoise Cachin, Gallimard, Paris, 2000.",
+    "provenance": "Paul Signac [1863-1935]; Atelier Paul Signac, 1893 until 1924; Marcel Kapferer, Paris, France, 1924. Raphaël Gérard, Paris, France, March 26, 1931 until at least December 1933 [1]. E. Raudag?, Glasgow, Scotland, by 1940 [2]. Alex Reid & Lefèvre, London, England, 1966; Sam Salz, Inc., New York, NY; purchased by Museum, December 1966.   Notes: [1]. Exhibited in \"Seurat et ses Amis\", Paris, December 1933-January 1934.  [2]. This name might also be \"Randag\". See Signac catalogue raisonné by Françoise Cachin, Gallimard, Paris, 2000.",
     "generated_provenance": {
       "period": [
         {
@@ -11787,14 +11910,14 @@
         {
           "period_certainty": true,
           "acquisition_method": "Purchase",
-          "party": "Carnegie Museum of Art",
+          "party": "Museum",
           "party_certainty": true,
           "birth": null,
           "birth_certainty": null,
           "death": null,
           "death_certainty": null,
-          "location": "Pittsburgh, PA",
-          "location_certainty": true,
+          "location": null,
+          "location_certainty": null,
           "botb": 2439461,
           "botb_certainty": true,
           "botb_precision": 2,
@@ -11808,23 +11931,62 @@
           "eote_certainty": null,
           "eote_precision": null,
           "original_text": "purchased by Museum, December 1966",
-          "provenance": "purchased by Carnegie Museum of Art, Pittsburgh, PA, December 1966",
-          "parsable": false,
-          "direct_transfer": null,
+          "provenance": "purchased by Museum, December 1966",
+          "parsable": true,
+          "direct_transfer": false,
           "stock_number": null,
           "footnote": "",
           "primary_owner": true,
           "earliest_possible": 2439461,
           "earliest_definite": 2439491,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2439491,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "December 1966",
           "deacquisition_timestring": "",
           "timestring": "December 1966"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439491,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 8,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
         }
       ],
-      "provenance": "Paul Signac [1863-1935]; Atelier Paul Signac, 1893 until 1924; Marcel Kapferer, Paris, France, 1924. Raphaël Gérard, Paris, France, March 26, 1931 until at least December 1933 [1]. E. Raudag?, Glasgow, Scotland, by 1940 [2]. Alex Reid & Lefèvre, London, England, 1966; Sam Salz, Inc., New York, NY; purchased by Carnegie Museum of Art, Pittsburgh, PA, December 1966. NOTES: [1] . Exhibited in \"Seurat et ses Amis\", Paris, December 1933-January 1934. [2] . This name might also be \"Randag\". See Signac catalogue raisonné by Françoise Cachin, Gallimard, Paris, 2000."
+      "provenance": "Paul Signac [1863-1935]; Atelier Paul Signac, 1893 until 1924; Marcel Kapferer, Paris, France, 1924. Raphaël Gérard, Paris, France, March 26, 1931 until at least December 1933 [1]. E. Raudag?, Glasgow, Scotland, by 1940 [2]. Alex Reid & Lefèvre, London, England, 1966; Sam Salz, Inc., New York, NY; purchased by Museum, December 1966. Notes:. NOTES: [1] . Exhibited in \"Seurat et ses Amis\", Paris, December 1933-January 1934. [2] . This name might also be \"Randag\". See Signac catalogue raisonné by Françoise Cachin, Gallimard, Paris, 2000."
     },
     "artist": {
       "name": "Paul Signac",
@@ -12050,17 +12212,18 @@
         }
       },
       {
-        "name": "Carnegie Museum of Art",
+        "name": "Museum",
         "earliest_possible": "1966-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1966-12-31",
-        "latest_definite": "2015-08-13",
-        "location": {
-          "lat": 40.44062,
-          "lng": -79.99589,
-          "name": "Pittsburgh",
-          "geonameId": 5206379
-        }
+        "latest_definite": "1966-12-31"
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1966-12-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
       }
     ],
     "downloaded_image": "gallery_8/1012263_place-des-lices-st-tropez.jpg"
@@ -12381,8 +12544,8 @@
           "primary_owner": true,
           "earliest_possible": 2440557,
           "earliest_definite": 2440587,
-          "latest_definite": 2457248,
-          "latest_possible": 2457248,
+          "latest_definite": 2457268,
+          "latest_possible": 2457268,
           "order": 7,
           "acquisition_timestring": "December 1969",
           "deacquisition_timestring": "",
@@ -12735,9 +12898,9 @@
       {
         "name": "Carnegie Museum of Art",
         "earliest_possible": "1969-12-01",
-        "latest_possible": "2015-08-13",
+        "latest_possible": "2015-09-02",
         "earliest_definite": "1969-12-31",
-        "latest_definite": "2015-08-13",
+        "latest_definite": "2015-09-02",
         "location": {
           "lat": 40.44062,
           "lng": -79.99589,
@@ -12747,5 +12910,726 @@
       }
     ],
     "downloaded_image": "gallery_8/1012610_henri-rouart-in-front-of-his-factory.jpg"
+  },
+  {
+    "id": 1012310,
+    "category": "paintings",
+    "medium": "oil on canvas",
+    "title": "Le Moulin de la Galette",
+    "accession_number": "67.16",
+    "image": "http://it-svr-emu03/imucma/imu.php?request=multimedia&irn=19702",
+    "creation_date": "1886-01-01",
+    "provenance": "Vincent van Gogh [1853-1890]; gift to Andries Bonger [1861-1936], Amsterdam, Netherlands, 1888 until January 20, 1936 [1]; bequest to F. W. M. Bonger, Baroness van der Boch van Verwolde, his second wife [1887-1975], Amsterdam, Netherlands [2]; her gift to C. H. Huguenot van der Linden, Amsterdam, Netherlands, after January 1936 [3]. Possibly Bignou Gallery, New York, NY [4]. Georges Bigar, New York, NY, 1955?; Mr. [1914-2011] and Mrs. Raymond Bigar, New York, NY, by March 1955 until at least July 1957 [5]; private collection, England [6]; Wildenstein & Company, Inc., New York, NY, by 1967; purchased by Museum, October 1967.   Notes: [1]. Given by the artist on the occasion of Andries Bonger's marriage to Annie van der Linden in 1888. See \"Odilon Redon and Emil Bernard, Masterpieces from the Andries Bonger Collection\", Van Gogh Museum, Amsterdam, 2009, no.89, illustrated on p.24.  Walter Feilchenfeldt in \"Vincent van Gogh, The Years in France\" (English edition published by Philip Wilson Publishers, London, 2013), gives an alternate early provenance beginning with Theo van Gogh, Johanna van Gogh-Bonger, and V. W. van Gogh. This is probably because he identifies this work as no. 47 (Au Moulin de la Galette) on the Andries Bonger list. See the reference for a discussion of the origin and uncertainties of this list. [2]. Her full name was Françoise Willemina Maria Bonger, Barones van der Borch van Verwolde.  [3]. Heir of Andries Bonger's first wife, Annie Bonger-van der Linden. The middle initial of this owner is in some doubt.  The reference from the Van Gogh Museum given above gives it as \"H.” and Walter Feilchenfeldt as “L.” Also, the van Gogh Museum reference lists only one heir as recipient of the gift under the painting's catalogue entry (no. 89, p. 120), but in the text  (p. 83)  the painting is referred to as a gift to \"C. H. Huguenort van der Linden and E. C. van der Linden\".  [4]. The painting is illustrated in the Bignou Gallery Albums (no. 2923), The Frick Fine Arts Library Archives, New York, NY. The Bignou Gallery in New York closed by 1953. [5]. Mr. and Mrs. Raymond Bigar lent the painting to Van Gogh exhibitions in New York in March-April 1955 and in Los Angeles in July-August 1957.  [6]. See correspondence with Wildenstein & Company in curatorial file.",
+    "generated_provenance": {
+      "period": [
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Vincent van Gogh",
+          "party_certainty": true,
+          "birth": 2397855,
+          "birth_certainty": true,
+          "death": 2411733,
+          "death_certainty": true,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Vincent van Gogh [1853-1890]",
+          "provenance": "Vincent van Gogh [1853-1890]",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2397855,
+          "earliest_definite": null,
+          "latest_definite": 2410638,
+          "latest_possible": 2411003,
+          "order": 0,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": "Gift",
+          "party": "Andries Bonger",
+          "party_certainty": true,
+          "birth": 2400777,
+          "birth_certainty": true,
+          "death": 2428534,
+          "death_certainty": true,
+          "location": "Amsterdam, Netherlands",
+          "location_certainty": true,
+          "botb": 2410638,
+          "botb_certainty": true,
+          "botb_precision": 1,
+          "eotb": 2411003,
+          "eotb_certainty": true,
+          "eotb_precision": 1,
+          "bote": 2428188,
+          "bote_certainty": true,
+          "bote_precision": 3,
+          "eote": 2428188,
+          "eote_certainty": true,
+          "eote_precision": 3,
+          "original_text": "gift to Andries Bonger [1861-1936], Amsterdam, Netherlands, 1888 until January 20, 1936",
+          "provenance": "gift to Andries Bonger [1861-1936], Amsterdam, Netherlands, 1888 until January 20, 1936",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": ". Given by the artist on the occasion of Andries Bonger's marriage to Annie van der Linden in 1888. See \"Odilon Redon and Emil Bernard, Masterpieces from the Andries Bonger Collection\", Van Gogh Museum, Amsterdam, 2009, no.89, illustrated on p.24.  Walter Feilchenfeldt in \"Vincent van Gogh, The Years in France\" (English edition published by Philip Wilson Publishers, London, 2013), gives an alternate early provenance beginning with Theo van Gogh, Johanna van Gogh-Bonger, and V. W. van Gogh. This is probably because he identifies this work as no. 47 (Au Moulin de la Galette) on the Andries Bonger list. See the reference for a discussion of the origin and uncertainties of this list.",
+          "primary_owner": true,
+          "earliest_possible": 2410638,
+          "earliest_definite": 2411003,
+          "latest_definite": 2428188,
+          "latest_possible": 2428188,
+          "order": 1,
+          "acquisition_timestring": "1888",
+          "deacquisition_timestring": "January 20, 1936",
+          "timestring": "1888 until January 20, 1936"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": "Bequest",
+          "party": "F. W. M. Bonger, Baroness van der Boch van Verwolde",
+          "party_certainty": true,
+          "birth": 2410273,
+          "birth_certainty": true,
+          "death": 2442778,
+          "death_certainty": true,
+          "location": "his second wife, Amsterdam, Netherlands",
+          "location_certainty": true,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "bequest to F. W. M. Bonger, Baroness van der Boch van Verwolde, his second wife [1887-1975], Amsterdam, Netherlands",
+          "provenance": "bequest to F. W. M. Bonger, Baroness van der Boch van Verwolde [1887-1975], his second wife, Amsterdam, Netherlands",
+          "parsable": false,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": ". Her full name was Françoise Willemina Maria Bonger, Barones van der Borch van Verwolde.",
+          "primary_owner": true,
+          "earliest_possible": 2428188,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2435473,
+          "order": 2,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": "Gift",
+          "party": "C. H. Huguenot van der Linden",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "Amsterdam, Netherlands",
+          "location_certainty": true,
+          "botb": 2428169,
+          "botb_certainty": true,
+          "botb_precision": 2,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": 0,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "her gift to C. H. Huguenot van der Linden, Amsterdam, Netherlands, after January 1936",
+          "provenance": "gift to C. H. Huguenot van der Linden, Amsterdam, Netherlands, after January 1936",
+          "parsable": false,
+          "direct_transfer": false,
+          "stock_number": null,
+          "footnote": ". Heir of Andries Bonger's first wife, Annie Bonger-van der Linden. The middle initial of this owner is in some doubt.  The reference from the Van Gogh Museum given above gives it as \"H.” and Walter Feilchenfeldt as “L.” Also, the van Gogh Museum reference lists only one heir as recipient of the gift under the painting's catalogue entry (no. 89, p. 120), but in the text  (p. 83)  the painting is referred to as a gift to \"C. H. Huguenort van der Linden and E. C. van der Linden\".",
+          "primary_owner": true,
+          "earliest_possible": 2428169,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2435473,
+          "order": 3,
+          "acquisition_timestring": "after January 1936",
+          "deacquisition_timestring": "",
+          "timestring": "after January 1936"
+        },
+        {
+          "period_certainty": false,
+          "acquisition_method": null,
+          "party": "Bignou Gallery",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "New York, NY",
+          "location_certainty": true,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Possibly Bignou Gallery, New York, NY",
+          "provenance": "Possibly Bignou Gallery, New York, NY",
+          "parsable": true,
+          "direct_transfer": false,
+          "stock_number": null,
+          "footnote": ". The painting is illustrated in the Bignou Gallery Albums (no. 2923), The Frick Fine Arts Library Archives, New York, NY. The Bignou Gallery in New York closed by 1953.",
+          "primary_owner": true,
+          "earliest_possible": 2428169,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2435473,
+          "order": 4,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Georges Bigar",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "New York, NY",
+          "location_certainty": true,
+          "botb": 2435109,
+          "botb_certainty": false,
+          "botb_precision": 1,
+          "eotb": 2435473,
+          "eotb_certainty": false,
+          "eotb_precision": 1,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Georges Bigar, New York, NY, 1955?",
+          "provenance": "Georges Bigar, New York, NY, 1955?",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2435109,
+          "earliest_definite": 2435473,
+          "latest_definite": 2435473,
+          "latest_possible": 2435198,
+          "order": 5,
+          "acquisition_timestring": "1955?",
+          "deacquisition_timestring": "",
+          "timestring": "1955?"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Mr. and Mrs. Raymond Bigar",
+          "party_certainty": true,
+          "birth": 2420134,
+          "birth_certainty": true,
+          "death": 2455927,
+          "death_certainty": true,
+          "location": "New York, NY",
+          "location_certainty": true,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": 0,
+          "eotb": 2435198,
+          "eotb_certainty": true,
+          "eotb_precision": 2,
+          "bote": 2436021,
+          "bote_certainty": true,
+          "bote_precision": 2,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": 0,
+          "original_text": "Mr. [1914-2011] and Mrs. Raymond Bigar, New York, NY, by March 1955 until at least July 1957",
+          "provenance": "Mr. and Mrs. Raymond Bigar [1914-2011], New York, NY, by March 1955 until at least July 1957",
+          "parsable": false,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": ". Mr. and Mrs. Raymond Bigar lent the painting to Van Gogh exhibitions in New York in March-April 1955 and in Los Angeles in July-August 1957.",
+          "primary_owner": true,
+          "earliest_possible": 2435473,
+          "earliest_definite": 2435198,
+          "latest_definite": 2436021,
+          "latest_possible": 2439856,
+          "order": 6,
+          "acquisition_timestring": "by March 1955",
+          "deacquisition_timestring": "after July 1957",
+          "timestring": "by March 1955 until at least July 1957"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "private collection",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "England",
+          "location_certainty": true,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "private collection, England",
+          "provenance": "private collection, England",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": ". See correspondence with Wildenstein & Company in curatorial file.",
+          "primary_owner": true,
+          "earliest_possible": 2436021,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2439856,
+          "order": 7,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Wildenstein & Company, Inc.",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": "New York, NY",
+          "location_certainty": true,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": 0,
+          "eotb": 2439856,
+          "eotb_certainty": true,
+          "eotb_precision": 1,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Wildenstein & Company, Inc., New York, NY, by 1967",
+          "provenance": "Wildenstein & Company, Inc., New York, NY, by 1967",
+          "parsable": true,
+          "direct_transfer": true,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2436021,
+          "earliest_definite": 2439856,
+          "latest_definite": 2439765,
+          "latest_possible": 2439795,
+          "order": 8,
+          "acquisition_timestring": "by 1967",
+          "deacquisition_timestring": "",
+          "timestring": "by 1967"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": "Purchase",
+          "party": "Museum",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": 2439765,
+          "botb_certainty": true,
+          "botb_precision": 2,
+          "eotb": 2439795,
+          "eotb_certainty": true,
+          "eotb_precision": 2,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "purchased by Museum, October 1967",
+          "provenance": "purchased by Museum, October 1967",
+          "parsable": true,
+          "direct_transfer": false,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439765,
+          "earliest_definite": 2439795,
+          "latest_definite": 2439795,
+          "latest_possible": 2457268,
+          "order": 9,
+          "acquisition_timestring": "October 1967",
+          "deacquisition_timestring": "",
+          "timestring": "October 1967"
+        },
+        {
+          "period_certainty": true,
+          "acquisition_method": null,
+          "party": "Notes:",
+          "party_certainty": true,
+          "birth": null,
+          "birth_certainty": null,
+          "death": null,
+          "death_certainty": null,
+          "location": null,
+          "location_certainty": null,
+          "botb": null,
+          "botb_certainty": null,
+          "botb_precision": null,
+          "eotb": null,
+          "eotb_certainty": null,
+          "eotb_precision": null,
+          "bote": null,
+          "bote_certainty": null,
+          "bote_precision": null,
+          "eote": null,
+          "eote_certainty": null,
+          "eote_precision": null,
+          "original_text": "Notes:",
+          "provenance": "Notes:",
+          "parsable": true,
+          "direct_transfer": null,
+          "stock_number": null,
+          "footnote": "",
+          "primary_owner": true,
+          "earliest_possible": 2439795,
+          "earliest_definite": null,
+          "latest_definite": null,
+          "latest_possible": 2457268,
+          "order": 10,
+          "acquisition_timestring": "",
+          "deacquisition_timestring": "",
+          "timestring": null
+        }
+      ],
+      "provenance": "Vincent van Gogh [1853-1890]; gift to Andries Bonger [1861-1936], Amsterdam, Netherlands, 1888 until January 20, 1936 [1]; bequest to F. W. M. Bonger, Baroness van der Boch van Verwolde [1887-1975], his second wife, Amsterdam, Netherlands [2]; gift to C. H. Huguenot van der Linden, Amsterdam, Netherlands, after January 1936 [3]. Possibly Bignou Gallery, New York, NY [4]. Georges Bigar, New York, NY, 1955?; Mr. and Mrs. Raymond Bigar [1914-2011], New York, NY, by March 1955 until at least July 1957 [5]; private collection, England [6]; Wildenstein & Company, Inc., New York, NY, by 1967; purchased by Museum, October 1967. Notes:. NOTES: [1] . Given by the artist on the occasion of Andries Bonger's marriage to Annie van der Linden in 1888. See \"Odilon Redon and Emil Bernard, Masterpieces from the Andries Bonger Collection\", Van Gogh Museum, Amsterdam, 2009, no.89, illustrated on p.24.  Walter Feilchenfeldt in \"Vincent van Gogh, The Years in France\" (English edition published by Philip Wilson Publishers, London, 2013), gives an alternate early provenance beginning with Theo van Gogh, Johanna van Gogh-Bonger, and V. W. van Gogh. This is probably because he identifies this work as no. 47 (Au Moulin de la Galette) on the Andries Bonger list. See the reference for a discussion of the origin and uncertainties of this list. [2] . Her full name was Françoise Willemina Maria Bonger, Barones van der Borch van Verwolde. [3] . Heir of Andries Bonger's first wife, Annie Bonger-van der Linden. The middle initial of this owner is in some doubt.  The reference from the Van Gogh Museum given above gives it as \"H.” and Walter Feilchenfeldt as “L.” Also, the van Gogh Museum reference lists only one heir as recipient of the gift under the painting's catalogue entry (no. 89, p. 120), but in the text  (p. 83)  the painting is referred to as a gift to \"C. H. Huguenort van der Linden and E. C. van der Linden\". [4] . The painting is illustrated in the Bignou Gallery Albums (no. 2923), The Frick Fine Arts Library Archives, New York, NY. The Bignou Gallery in New York closed by 1953. [5] . Mr. and Mrs. Raymond Bigar lent the painting to Van Gogh exhibitions in New York in March-April 1955 and in Los Angeles in July-August 1957. [6] . See correspondence with Wildenstein & Company in curatorial file."
+    },
+    "artist": {
+      "name": "Vincent van Gogh",
+      "location": {
+        "lat": 48.88728,
+        "lng": 2.33725,
+        "name": "Moulin de la Galette",
+        "geonameId": 9457864
+      }
+    },
+    "events": [
+      {
+        "title": "Van Gogh: Face to Face",
+        "venues": [
+          {
+            "name": "Philadelphia Museum of Art",
+            "earliest": "2000-10-12",
+            "latest": "2001-01-14",
+            "location": {
+              "lat": 39.95234,
+              "lng": -75.16379,
+              "name": "Philadelphia",
+              "geonameId": 4560349
+            }
+          }
+        ]
+      },
+      {
+        "title": "Becoming Van Gogh",
+        "venues": [
+          {
+            "name": "Denver Art Museum",
+            "earliest": "2012-10-21",
+            "latest": "2013-01-20",
+            "location": {
+              "lat": 39.73915,
+              "lng": -104.9847,
+              "name": "Denver",
+              "geonameId": 5419384
+            }
+          }
+        ]
+      },
+      {
+        "title": "Van Gogh: Heartfelt Lines",
+        "venues": [
+          {
+            "name": "Albertina Museum",
+            "earliest": "2008-09-05",
+            "latest": "2008-12-08",
+            "location": {
+              "lat": 48.20849,
+              "lng": 16.37208,
+              "name": "Vienna",
+              "geonameId": 2761369
+            }
+          }
+        ]
+      },
+      {
+        "title": "Van Gogh Loan Exhibition",
+        "venues": [
+          {
+            "name": "Wildenstein and Co., Inc.",
+            "earliest": "1955-03-24",
+            "latest": "1955-04-30",
+            "location": {
+              "lat": 40.71427,
+              "lng": -74.00597,
+              "name": "New York",
+              "geonameId": 5128581
+            }
+          }
+        ]
+      },
+      {
+        "title": "Vincent Van Gogh, A Loan Exhibition of Paintings and Drawings",
+        "venues": [
+          {
+            "name": "Los Angeles Municipal Art Gallery",
+            "earliest": "1957-07-03",
+            "latest": "1957-08-04"
+          }
+        ]
+      },
+      {
+        "title": "Vincent Van Gogh à Paris",
+        "venues": [
+          {
+            "name": "Musée d'Orsay, Paris",
+            "earliest": "1988-02-02",
+            "latest": "1988-05-15",
+            "location": {
+              "lat": 48.85341,
+              "lng": 2.3488,
+              "name": "Paris",
+              "geonameId": 2988507
+            }
+          }
+        ]
+      },
+      {
+        "title": "L'impressionismo e l'eta di Van Gogh. La rivoluzione di un'arte nuova",
+        "venues": [
+          {
+            "name": "Casa dei Carraresi",
+            "earliest": "2002-11-09",
+            "latest": "2003-04-13",
+            "location": {
+              "lat": 45.66908,
+              "lng": 12.23614,
+              "name": "Treviso",
+              "geonameId": 3165201
+            }
+          }
+        ]
+      },
+      {
+        "title": "Twelve Years of Collecting",
+        "venues": [
+          {
+            "name": "Wildenstein and Co., Inc.",
+            "earliest": "1973-11-07",
+            "latest": "1973-12-15",
+            "location": {
+              "lat": 40.71427,
+              "lng": -74.00597,
+              "name": "New York",
+              "geonameId": 5128581
+            }
+          }
+        ]
+      },
+      {
+        "title": "A French Way of Seeing",
+        "venues": [
+          {
+            "name": "High Museum of Art, Atlanta",
+            "earliest": "1974-01-04",
+            "latest": "1974-01-27",
+            "location": {
+              "lat": 33.749,
+              "lng": -84.38798,
+              "name": "Atlanta",
+              "geonameId": 4180439
+            }
+          }
+        ]
+      }
+    ],
+    "owners": [
+      {
+        "name": "Vincent van Gogh",
+        "earliest_possible": "1853-01-01",
+        "latest_possible": "1888-12-31",
+        "earliest_definite": null,
+        "latest_definite": "1888-01-01"
+      },
+      {
+        "name": "Andries Bonger",
+        "earliest_possible": "1888-01-01",
+        "latest_possible": "1936-01-20",
+        "earliest_definite": "1888-12-31",
+        "latest_definite": "1936-01-20",
+        "location": {
+          "lat": 52.37403,
+          "lng": 4.88969,
+          "name": "Amsterdam",
+          "geonameId": 2759794
+        }
+      },
+      {
+        "name": "F. W. M. Bonger, Baroness van der Boch van Verwolde",
+        "earliest_possible": "1936-01-20",
+        "latest_possible": "1955-12-31?",
+        "earliest_definite": null,
+        "latest_definite": null,
+        "location": {
+          "lat": 52.37403,
+          "lng": 4.88969,
+          "name": "Amsterdam",
+          "geonameId": 2759794
+        }
+      },
+      {
+        "name": "C. H. Huguenot van der Linden",
+        "earliest_possible": "1936-01-01",
+        "latest_possible": "1955-12-31?",
+        "earliest_definite": null,
+        "latest_definite": null,
+        "location": {
+          "lat": 52.37403,
+          "lng": 4.88969,
+          "name": "Amsterdam",
+          "geonameId": 2759794
+        }
+      },
+      {
+        "name": "Bignou Gallery",
+        "earliest_possible": "1936-01-01",
+        "latest_possible": "1955-12-31?",
+        "earliest_definite": null,
+        "latest_definite": null,
+        "location": {
+          "lat": 40.71427,
+          "lng": -74.00597,
+          "name": "New York",
+          "geonameId": 5128581
+        }
+      },
+      {
+        "name": "Georges Bigar",
+        "earliest_possible": "1955-01-01?",
+        "latest_possible": "1955-03-31",
+        "earliest_definite": "1955-12-31?",
+        "latest_definite": "1955-12-31?",
+        "location": {
+          "lat": 40.71427,
+          "lng": -74.00597,
+          "name": "New York",
+          "geonameId": 5128581
+        }
+      },
+      {
+        "name": "Mr. and Mrs. Raymond Bigar",
+        "earliest_possible": "1955-12-31?",
+        "latest_possible": "1967-12-31",
+        "earliest_definite": "1955-03-31",
+        "latest_definite": "1957-07-01",
+        "location": {
+          "lat": 40.71427,
+          "lng": -74.00597,
+          "name": "New York",
+          "geonameId": 5128581
+        }
+      },
+      {
+        "name": "private collection",
+        "earliest_possible": "1957-07-01",
+        "latest_possible": "1967-12-31",
+        "earliest_definite": null,
+        "latest_definite": null,
+        "location": {
+          "lat": 52.16045,
+          "lng": -0.70312,
+          "name": "England",
+          "geonameId": 6269131
+        }
+      },
+      {
+        "name": "Wildenstein & Company, Inc.",
+        "earliest_possible": "1957-07-01",
+        "latest_possible": "1967-10-31",
+        "earliest_definite": "1967-12-31",
+        "latest_definite": "1967-10-01",
+        "location": {
+          "lat": 40.71427,
+          "lng": -74.00597,
+          "name": "New York",
+          "geonameId": 5128581
+        }
+      },
+      {
+        "name": "Museum",
+        "earliest_possible": "1967-10-01",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": "1967-10-31",
+        "latest_definite": "1967-10-31"
+      },
+      {
+        "name": "Notes:",
+        "earliest_possible": "1967-10-31",
+        "latest_possible": "2015-09-02",
+        "earliest_definite": null,
+        "latest_definite": null
+      }
+    ],
+    "downloaded_image": "gallery_8/1012310_le-moulin-de-la-galette.jpg"
   }
 ]
